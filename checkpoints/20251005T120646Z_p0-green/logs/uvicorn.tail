@@ -1,0 +1,76 @@
+INFO:     Started server process [17677]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8785 (Press CTRL+C to quit)
+INFO:     127.0.0.1:50670 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50678 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50680 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50682 - "POST /ask HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:50718 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50720 - "POST /ask HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:50726 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50728 - "POST /ask HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:50738 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50740 - "POST /ask HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:50778 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50780 - "POST /ask HTTP/1.1" 500 Internal Server Error
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [17677]
+INFO:     Started server process [22490]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8785 (Press CTRL+C to quit)
+INFO:     127.0.0.1:50828 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50830 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50848 - "POST /ask HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:50850 - "POST /gen HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50858 - "POST /import HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50862 - "POST /remember HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50864 - "GET /recall?session=alpha HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50868 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50870 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50872 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50874 - "POST /ask HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:50878 - "POST /ask HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:50890 - "POST /ask HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:50892 - "POST /ask HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:50900 - "POST /ask HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:50902 - "POST /ask HTTP/1.1" 500 Internal Server Error
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [22490]
+INFO:     Started server process [24891]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8785 (Press CTRL+C to quit)
+INFO:     127.0.0.1:50916 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50918 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50920 - "POST /ask HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [24891]
+INFO:     Started server process [25636]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8785 (Press CTRL+C to quit)
+INFO:     127.0.0.1:50944 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50946 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50948 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50966 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50968 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50976 - "POST /import HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50980 - "POST /gen HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50990 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50992 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51000 - "POST /import HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51004 - "POST /gen HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51006 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51008 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51010 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51012 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51040 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51042 - "GET /metrics HTTP/1.1" 200 OK

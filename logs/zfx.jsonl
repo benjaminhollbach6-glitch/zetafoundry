@@ -1,0 +1,113 @@
+{"ts": "2025-10-05T11:44:00Z", "id": "e8b954f281ab", "kind": "ask", "q": "Statusbericht ZETAFOUNDRY", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T11:45:22Z", "id": "0e327e48bc31", "kind": "gen", "prompt": "installer+service+health+metrics sqlite (bash)", "count": 2}
+{"ts": "2025-10-05T11:53:07Z", "id": "5eab3d83f174", "kind": "ask", "q": "Gib mir eine präzise 3-Satz-Zusammenfassung des Projekts.", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T11:53:07Z", "id": "19185fd57cee", "kind": "ask", "q": "Welche Module, Services und Endpunkte hat ZETAFOUNDRY?", "hits": [{"title": "sample.txt::0", "score": -0.0}, {"title": "sample.txt::0", "score": 0.0}, {"title": "sample.txt::0", "score": 0.0}], "session": "alpha"}
+{"ts": "2025-10-05T11:56:22Z", "id": "0313ddfcbc0d", "kind": "ask", "q": "Gib mir eine präzise 3-Satz-Zusammenfassung des Projekts.", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T11:56:22Z", "id": "46554b0eeea5", "kind": "ask", "q": "Welche Module, Services und Endpunkte hat ZETAFOUNDRY?", "hits": [{"title": "sample.txt::0", "score": 0.0}, {"title": "sample.txt::0", "score": 0.0}, {"title": "sample.txt::0", "score": 0.0}], "session": "alpha"}
+{"ts": "2025-10-05T11:58:58Z", "id": "1e19d90bd608", "kind": "gen", "prompt": "installer+service+health (bash)", "count": 1}
+{"ts": "2025-10-05T12:01:54Z", "id": "5900d082a5b4", "kind": "gen", "prompt": "installer+service+health (bash)", "count": 1}
+{"ts": "2025-10-05T12:06:57Z", "id": "4cd8a0ec73f2", "kind": "gen", "prompt": "installer+service+health (bash)", "count": 1}
+{"ts": "2025-10-05T12:40:23Z", "id": "26035b12fc80", "kind": "ask", "q": "Gib mir eine präzise 3-Satz-Zusammenfassung des Projekts.", "hits": [{"title": "kokon.html.txt::3", "score": -3.33}, {"title": "kokon.html.txt::3", "score": -3.33}], "session": "doctor"}
+{"ts": "2025-10-05T12:40:23Z", "id": "f665a523534a", "kind": "ask", "q": "Welche Module, Services und Endpunkte hat ZETAFOUNDRY?", "hits": [{"title": "kokon.html.txt::1", "score": -1.27}, {"title": "kokon.html.txt::1", "score": -1.27}, {"title": "zfx_readme.txt::0", "score": -1.02}, {"title": "zfx_readme.txt::0", "score": -1.02}, {"title": "sample.txt::0", "score": -1.01}, {"title": "sample.txt::0", "score": -1.01}, {"title": "sample.txt::0", "score": -1.01}], "session": "doctor"}
+{"ts": "2025-10-05T12:40:23Z", "id": "c93ef9d1b38d", "kind": "gen", "prompt": "installer+service+health (bash)", "count": 1}
+{"ts": "2025-10-05T12:48:56Z", "id": "ddbefdf9a44a", "kind": "ask", "q": "Kurzstatus", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:48:56Z", "id": "3059be15047c", "kind": "gen", "prompt": "installer+service+health (bash)", "count": 1}
+{"ts": "2025-10-05T12:49:10Z", "id": "eac78a9533e4", "kind": "ask", "q": "Status", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:54:59Z", "id": "54c6904d5892", "kind": "ask", "q": "Kurzstatus", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:54:59Z", "id": "ea68c21e1096", "kind": "ask", "q": "ping", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:54:59Z", "id": "851802c22538", "kind": "ask", "q": "ping", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:54:59Z", "id": "a7c34bc927a4", "kind": "ask", "q": "ping", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:54:59Z", "id": "6d2416bc6cff", "kind": "ask", "q": "ping", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:54:59Z", "id": "4ecc115acb46", "kind": "ask", "q": "ping", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:54:59Z", "id": "31365783be1b", "kind": "ask", "q": "ping", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:54:59Z", "id": "fdf9782cfa36", "kind": "ask", "q": "ping", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:54:59Z", "id": "542066b8b026", "kind": "ask", "q": "ping", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:54:59Z", "id": "e1a8a88c8b88", "kind": "ask", "q": "ping", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:55:12Z", "id": "9df6cd65490d", "kind": "ask", "q": "ping", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:55:12Z", "id": "e86cfa3108d2", "kind": "ask", "q": "ping", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:55:12Z", "id": "0765878a889f", "kind": "ask", "q": "ping", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:55:12Z", "id": "4994d151445c", "kind": "ask", "q": "ping", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:55:12Z", "id": "a2a263baad20", "kind": "ask", "q": "ping", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:55:12Z", "id": "e5673c488ce6", "kind": "ask", "q": "ping", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:55:12Z", "id": "584c1f6a9182", "kind": "ask", "q": "ping", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:55:12Z", "id": "3d05c9f2599c", "kind": "ask", "q": "ping", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:55:12Z", "id": "ae214633f6eb", "kind": "ask", "q": "ping", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:55:12Z", "id": "b03f536d126b", "kind": "ask", "q": "ping", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T12:55:12Z", "id": "a6bdb1b8d8b6", "kind": "ask", "q": "ping", "hits": [], "session": "alpha"}
+{"ts": "2025-10-05T13:31:49Z", "id": "2a31a2d8a9be", "kind": "ask", "q": "kurzer Smoke A", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T13:31:49Z", "id": "bdc8b3a8acdb", "kind": "ask", "q": "kurzer Smoke B", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T13:36:23Z", "id": "69b6a97329e9", "kind": "ask", "q": "Gib mir eine präzise 3-Satz-Zusammenfassung des Projekts.", "hits": [{"title": "kokon.html.txt::3", "score": -3.33}, {"title": "kokon.html.txt::3", "score": -3.33}], "session": "p4"}
+{"ts": "2025-10-05T13:38:24Z", "id": "352c086fa195", "kind": "ask", "q": "Gib mir eine präzise 3-Satz-Zusammenfassung des Projekts.", "hits": [{"title": "kokon.html.txt::3", "score": -3.33}, {"title": "kokon.html.txt::3", "score": -3.33}], "session": "p4r"}
+{"ts": "2025-10-05T13:40:20Z", "id": "833cac369b3b", "kind": "ask", "q": "Gib mir eine präzise 3-Satz-Zusammenfassung des Projekts.", "hits": [{"title": "kokon.html.txt::3", "score": -3.33}, {"title": "kokon.html.txt::3", "score": -3.33}], "session": "p4r"}
+{"ts": "2025-10-05T13:41:38Z", "id": "285decf0f053", "kind": "ask", "q": "Gib mir eine präzise 3-Satz-Zusammenfassung des Projekts.", "hits": [{"title": "kokon.html.txt::3", "score": -3.33}, {"title": "kokon.html.txt::3", "score": -3.33}], "session": "p4r"}
+{"ts": "2025-10-05T13:43:02Z", "id": "07c6dd029cd5", "kind": "ask", "q": "Gib mir eine präzise 3-Satz-Zusammenfassung des Projekts.", "hits": [{"title": "kokon.html.txt::3", "score": -3.33}, {"title": "kokon.html.txt::3", "score": -3.33}], "session": "p4r"}
+{"ts": "2025-10-05T13:43:02Z", "id": "e5de50ddc78e", "kind": "ask", "q": "Welche Module, Services und Endpunkte hat ZETAFOUNDRY?", "hits": [{"title": "kokon.html.txt::1", "score": -1.27}, {"title": "kokon.html.txt::1", "score": -1.27}, {"title": "zfx_readme.txt::0", "score": -1.02}, {"title": "zfx_readme.txt::0", "score": -1.02}, {"title": "sample.txt::0", "score": -1.01}, {"title": "sample.txt::0", "score": -1.01}, {"title": "sample.txt::0", "score": -1.01}], "session": "p4r"}
+{"ts": "2025-10-05T13:45:47Z", "id": "1f5891a47732", "kind": "ask", "q": "Gib mir eine präzise 3-Satz-Zusammenfassung des Projekts.", "hits": [{"title": "kokon.html.txt::3", "score": -3.33}, {"title": "kokon.html.txt::3", "score": -3.33}], "session": "doctor"}
+{"ts": "2025-10-05T13:51:25Z", "id": "28ed1d0b034f", "kind": "ask", "q": "kurzer Smoke", "hits": [], "session": "doctor"}
+{"ts": "2025-10-05T13:51:35Z", "id": "bd2a3e68a171", "kind": "ask", "q": "Gib mir eine präzise 3-Satz-Zusammenfassung des Projekts.", "hits": [{"title": "kokon.html.txt::3", "score": -3.33}, {"title": "kokon.html.txt::3", "score": -3.33}], "session": "doctor"}
+{"ts": "2025-10-05T13:51:35Z", "id": "e62628e0c9c6", "kind": "ask", "q": "Welche Module, Services und Endpunkte hat ZETAFOUNDRY?", "hits": [{"title": "kokon.html.txt::1", "score": -1.27}, {"title": "kokon.html.txt::1", "score": -1.27}, {"title": "zfx_readme.txt::0", "score": -1.02}, {"title": "zfx_readme.txt::0", "score": -1.02}, {"title": "sample.txt::0", "score": -1.01}, {"title": "sample.txt::0", "score": -1.01}, {"title": "sample.txt::0", "score": -1.01}], "session": "doctor"}
+{"ts": "2025-10-05T13:51:35Z", "id": "ffed7a988755", "kind": "gen", "prompt": "installer+service+health (bash)", "count": 1}
+{"ts": "2025-10-05T13:56:24Z", "id": "04f87bbebba1", "kind": "ask", "q": "audit test A", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T13:56:24Z", "id": "d3161aa73b90", "kind": "ask", "q": "audit test B", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T14:25:01Z", "id": "05c697f13d7f", "kind": "ask", "q": "seed event A", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T14:25:01Z", "id": "eb63271d8831", "kind": "ask", "q": "seed event B", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T14:37:37Z", "id": "a05a6524c403", "kind": "ask", "q": "seed A", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T14:37:37Z", "id": "eb29379a9e21", "kind": "ask", "q": "seed B", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:17:04Z", "id": "e9c00d6deeea", "kind": "ask", "q": "seed A", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:17:04Z", "id": "1b732f2010d7", "kind": "ask", "q": "seed B", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:39:42Z", "id": "dab10347aeb2", "kind": "ask", "q": "seed A", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:39:42Z", "id": "973433ed85e4", "kind": "ask", "q": "seed B", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:40:06Z", "id": "04b07283725f", "kind": "ask", "q": "audit seed 1", "hits": [{"title": "kokon.html.txt::2", "score": -0.52}, {"title": "kokon.html.txt::2", "score": -0.52}, {"title": "kokon.html.txt::1", "score": -0.43}, {"title": "kokon.html.txt::1", "score": -0.43}, {"title": "kokon.html.txt::0", "score": -0.28}, {"title": "kokon.html.txt::0", "score": -0.28}], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:40:06Z", "id": "685c72860a13", "kind": "ask", "q": "audit seed 2", "hits": [{"title": "kokon.html.txt::2", "score": -1.31}, {"title": "kokon.html.txt::2", "score": -1.31}], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:41:57Z", "id": "9715ea188c71", "kind": "ask", "q": "Audit Smoke", "hits": [], "session": "p3"}
+{"ts": "2025-10-05T15:43:48Z", "id": "4054863a4954", "kind": "ask", "q": "seed A", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:43:48Z", "id": "db993b848d55", "kind": "ask", "q": "seed B", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:44:49Z", "id": "5daf5b881e7f", "kind": "ask", "q": "seed C", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:44:49Z", "id": "6157e1ac8603", "kind": "ask", "q": "seed D", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:45:00Z", "id": "a965f5357516", "kind": "ask", "q": "seed C", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:45:00Z", "id": "1e1168abf06c", "kind": "ask", "q": "seed D", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:45:09Z", "id": "9aab845f16a9", "kind": "ask", "q": "audit seed 1", "hits": [{"title": "kokon.html.txt::2", "score": -0.52}, {"title": "kokon.html.txt::2", "score": -0.52}, {"title": "kokon.html.txt::1", "score": -0.43}, {"title": "kokon.html.txt::1", "score": -0.43}, {"title": "kokon.html.txt::0", "score": -0.28}, {"title": "kokon.html.txt::0", "score": -0.28}], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:49:17Z", "id": "be51578af346", "kind": "ask", "q": "seed A", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:49:17Z", "id": "9ce442abd3f5", "kind": "ask", "q": "seed B", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:54:05Z", "id": "5e0696c4119f", "kind": "ask", "q": "reseed A", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:54:05Z", "id": "8e00b8cdfd29", "kind": "ask", "q": "reseed B", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:57:34Z", "id": "9fc3430a8927", "kind": "ask", "q": "reseed A", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:57:34Z", "id": "ed7a8218df49", "kind": "ask", "q": "reseed B", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:59:22Z", "id": "19c8f5e01164", "kind": "ask", "q": "burst smoke", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:59:22Z", "id": "86fee3c23a8b", "kind": "ask", "q": "burst smoke", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:59:22Z", "id": "3985f8311788", "kind": "ask", "q": "burst smoke", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:59:22Z", "id": "0deb967c4457", "kind": "ask", "q": "burst smoke", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T15:59:22Z", "id": "f5caa5280365", "kind": "ask", "q": "burst smoke", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T16:01:31Z", "id": "eb35caeeb964", "kind": "ask", "q": "burst smoke", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T16:01:31Z", "id": "0875c082853a", "kind": "ask", "q": "burst smoke", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T16:01:31Z", "id": "72447a56141d", "kind": "ask", "q": "burst smoke", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T16:01:31Z", "id": "ec213b69dc36", "kind": "ask", "q": "burst smoke", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T16:01:31Z", "id": "69a777a7868a", "kind": "ask", "q": "burst smoke", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T16:12:17Z", "id": "83686b653796", "kind": "ask", "q": "stats seed A", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T16:12:17Z", "id": "bc3bf1d2def8", "kind": "ask", "q": "stats seed B", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T16:16:15Z", "id": "d1e1245559ca", "kind": "ask", "q": "audit postmortem A", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T16:16:15Z", "id": "ebd6473afea5", "kind": "ask", "q": "audit postmortem B", "hits": [], "session": "audit-smoke"}
+{"ts": "2025-10-05T16:38:20Z", "id": "d5c30242d8b7", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T16:38:21Z", "id": "d0755c184956", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T16:38:21Z", "id": "474c8042a78a", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T16:38:21Z", "id": "848a6187a9c7", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T16:38:21Z", "id": "25f8072876a9", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T16:38:21Z", "id": "191bc8a8011e", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T16:38:22Z", "id": "5aa73aa94d15", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T16:38:22Z", "id": "dc9266e1e367", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T16:43:28Z", "id": "adfe890bdc91", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T16:43:28Z", "id": "571b8a6fbc4d", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T16:43:28Z", "id": "c142fb1866bf", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T16:43:28Z", "id": "e708f5362c0e", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T16:43:29Z", "id": "af3845078a4e", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T16:43:29Z", "id": "2cc116e0f1e8", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T16:43:29Z", "id": "54a2ef3aae5a", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T16:43:29Z", "id": "03f7bd146837", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T19:19:37Z", "id": "7bf58343f338", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T19:19:37Z", "id": "0a5adf7d5b09", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T19:19:37Z", "id": "ed95872ea7a8", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T19:19:38Z", "id": "3c7ea8b89911", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T19:19:38Z", "id": "0bad3b9c6082", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T19:19:38Z", "id": "af2989633b6c", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T19:19:38Z", "id": "6a4cf6641734", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}
+{"ts": "2025-10-05T19:19:39Z", "id": "aab5ea8cee36", "kind": "ask", "q": "ping", "hits": [], "session": "rate-test"}

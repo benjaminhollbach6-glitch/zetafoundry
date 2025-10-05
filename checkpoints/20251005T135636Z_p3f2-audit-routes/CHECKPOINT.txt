@@ -1,0 +1,7 @@
+STAMP  : 20251005T135636Z
+LABEL  : p3f2-audit-routes
+TIME   : 2025-10-05 13:56:36 UTC
+API    : http://127.0.0.1:8785
+
+SUMMARY: P3f2: Audit-Routen hart an app registriert; /audit OK
+NOTE   : Fix: Router-Include griff nicht; Reason: Scope/Import-Pfad; Impact: verlässliche Audit-Endpunkte

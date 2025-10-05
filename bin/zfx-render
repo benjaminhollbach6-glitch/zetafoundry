@@ -1,0 +1,26 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -euo pipefail
+APP_NAME="${APP_NAME:-zetapp}"
+OUT=""
+while getopts ":o:" o; do case "$o" in o) OUT="$OPTARG";; *) echo "Usage: APP_NAME=foo zfx-render -o /path/out.sh < template" >&2; exit 2;; esac; done
+shift $((OPTIND-1))
+[ -n "$OUT" ] || { echo "Usage: APP_NAME=foo zfx-render -o /path/out.sh < template" >&2; exit 2; }
+if command -v python >/dev/null 2>&1; then
+python - "$APP_NAME" "$OUT" <<'PY'
+import sys
+tmpl = sys.stdin.read()
+app  = sys.argv[1]
+outp = sys.argv[2]
+try:
+    from jinja2 import Template
+    txt = Template(tmpl).render(app_name=app)
+except Exception:
+    txt = tmpl.replace("{{ app_name }}", app)
+with open(outp, "w", encoding="utf-8") as f:
+    f.write(txt)
+PY
+else
+  sed "s/{{[[:space:]]*app_name[[:space:]]*}}/${APP_NAME}/g" > "$OUT"
+fi
+chmod +x "$OUT"
+echo "[OK] Rendered: $OUT (APP_NAME=$APP_NAME)"

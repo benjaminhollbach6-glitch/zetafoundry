@@ -1,0 +1,182 @@
+from __future__ import annotations
+import json, os, time
+from typing import Any, Dict, List
+
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+AUDIT_PATH = os.path.join(ROOT, "data", "audit.jsonl")
+
+# ---------- helpers: never raise to ASGI ----------
+def _read_lines(path: str) -> List[Dict[str, Any]]:
+    out: List[Dict[str, Any]] = []
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    out.append(json.loads(line))
+                except Exception:
+                    pass
+    except FileNotFoundError:
+        pass
+    return out
+
+def _tail_payload(limit: int) -> Dict[str, Any]:
+    try:
+        from core.audit import audit_tail
+        l = max(1, min(int(limit), 1000))
+        entries = audit_tail(l)
+        return {"entries": entries, "count": len(entries)}
+    except Exception as e:
+        return {"entries": [], "count": 0, "error": str(e)}
+
+def _verify_payload() -> Dict[str, Any]:
+    try:
+        from core.audit import audit_verify
+        data = audit_verify()
+        return data if isinstance(data, dict) else {"ok": False, "issues": ["invalid audit_verify return"], "checked": 0}
+    except Exception as e:
+        return {"ok": False, "issues": [str(e)], "checked": 0}
+
+def _stats_payload() -> Dict[str, Any]:
+    lines = _read_lines(AUDIT_PATH)
+    n = len(lines)
+    out: Dict[str, Any] = {"count": n, "size_bytes": os.path.getsize(AUDIT_PATH) if os.path.exists(AUDIT_PATH) else 0}
+    if n:
+        first, last = lines[0], lines[-1]
+        out["first"] = {"id": first.get("id"), "ts": first.get("ts"), "path": first.get("path"), "hmac": first.get("hmac")}
+        out["last"]  = {"id": last.get("id"),  "ts": last.get("ts"),  "path": last.get("path"),  "hmac": last.get("hmac")}
+    return out
+
+def _rates_payload(query_params):
+    \"\"\"Compute dynamic rate stats for custom windows from ?w=CSV.
+    Accepts: w (CSV of seconds), path (filter), dec (rounding).
+    \"\"\"
+    import json, os
+    # --- params
+    w = query_params.get("w", "5,60,300")
+    if isinstance(w, list): w = w[0]
+    try:
+        windows = [int(x) for x in str(w).split(",") if str(x).strip()]
+    except Exception:
+        windows = [5,60,300]
+    if not windows:
+        windows = [5,60,300]
+
+    dec = query_params.get("dec", 3)
+    if isinstance(dec, list): dec = dec[0]
+    try:
+        dec = max(0, min(int(dec), 6))
+    except Exception:
+        dec = 3
+
+    path_filter = query_params.get("path")
+    if isinstance(path_filter, list): path_filter = path_filter[0]
+    path_filter = str(path_filter) if path_filter else None
+
+    # --- resolve audit path
+    try:
+        audit_path = AUDIT_PATH  # provided by module
+    except NameError:
+        # fallback: derive from this file location
+        here = os.path.abspath(os.path.dirname(__file__))
+        root = os.path.abspath(os.path.join(here, "..", ".."))
+        audit_path = os.path.join(root, "data", "audit.jsonl")
+
+    # --- collect timestamps (filtered)
+    ts = []
+    try:
+        with open(audit_path, "rb") as f:
+            for line in f:
+                try:
+                    rec = json.loads(line)
+                    if path_filter and rec.get("path") != path_filter:
+                        continue
+                    t = rec.get("ts")
+                    if isinstance(t, int):
+                        ts.append(t)
+                except Exception:
+                    pass
+    except Exception:
+        pass
+
+    ts.sort()
+    out = {"windows": windows, "overall_count": len(ts), "overall_rps": 0.0}
+    if len(ts) >= 2:
+        dur = (ts[-1] - ts[0]) / 1000.0
+        out["overall_rps"] = round((len(ts) / dur) if dur > 0 else 0.0, dec)
+
+    # zero-fill requested windows when no data
+    if not ts:
+        for wsec in windows:
+            out[f"count_{wsec}s"] = 0
+            out[f"rps_{wsec}s"] = 0.0
+        return out
+
+    now_ms = ts[-1]  # last seen event as reference
+    for wsec in windows:
+        cutoff = now_ms - int(wsec * 1000)
+        c = 0
+        # since ts is sorted, linear scan is fine for small files
+        for t in ts[::-1]:
+            if t < cutoff:
+                break
+            c += 1
+        out[f"count_{wsec}s"] = c
+        out[f"rps_{wsec}s"] = round(c / float(wsec), dec)
+
+    return out
+def install(app) -> str:
+    # unwrap AuditTap if present
+    base = getattr(app, "app", app)
+
+    targets = {"/audit", "/audit/verify", "/audit/stats", "/audit/rates"}
+    router = getattr(base, "router", None)
+    if router and hasattr(router, "routes"):
+        router.routes = [r for r in router.routes if getattr(r, "path", None) not in targets]
+
+    # FastAPI branch
+    if getattr(base, "add_api_route", None):
+        async def _audit(limit: int = 10): return _tail_payload(limit)
+        async def _verify():               return _verify_payload()
+        async def _stats():                return _stats_payload()
+        async def _rates():                return _rates_payload()
+        base.add_api_route("/audit", _audit, methods=["GET"])
+        base.add_api_route("/audit/verify", _verify, methods=["GET"])
+        base.add_api_route("/audit/stats", _stats, methods=["GET"])
+        base.add_api_route("/audit/rates", _rates, methods=["GET"])
+        return "fastapi"
+
+    # Starlette branch
+    if getattr(base, "add_route", None):
+        try:
+            from starlette.responses import JSONResponse
+        except Exception:
+            # tiny fallback JSON response if starlette import fails
+            def JSONResponse(content: Dict[str, Any], status_code: int = 200):
+                body = json.dumps(content, separators=(",", ":")).encode()
+                async def _asgi(scope, receive, send):
+                    await send({"type": "http.response.start", "status": status_code,
+                                "headers": [(b"content-type", b"application/json"),
+                                            (b"content-length", str(len(body)).encode())]})
+                    await send({"type": "http.response.body", "body": body})
+                return _asgi
+
+        async def _audit(request):  # request -> Response
+            limit = int(request.query_params.get("limit", "10"))
+            return JSONResponse(_tail_payload(limit))
+        async def _verify(request):
+            return JSONResponse(_verify_payload())
+        async def _stats(request):
+            return JSONResponse(_stats_payload())
+        async def _rates(request):
+            return JSONResponse(_rates_payload())
+
+        base.add_route("/audit", _audit, methods=["GET"])
+        base.add_route("/audit/verify", _verify, methods=["GET"])
+        base.add_route("/audit/stats", _stats, methods=["GET"])
+        base.add_route("/audit/rates", _rates, methods=["GET"])
+        return "starlette"
+
+    return "none"

@@ -1,0 +1,7 @@
+STAMP  : 20251005T134149Z
+LABEL  : p4r-qnorm-repair
+TIME   : 2025-10-05 13:41:49 UTC
+API    : http://127.0.0.1:8785
+
+SUMMARY: P4r Repair: Sanitizer/SafeSearch ok + /ask Hook; Smoke 200/200
+NOTE   : Fix: kaputte Here-Doc-Einfügung; Impact: stabile FTS/LIKE-Suche & robuste /ask

@@ -1,0 +1,7 @@
+STAMP  : 20251005T133159Z
+LABEL  : p3d-audit-seeded
+TIME   : 2025-10-05 13:31:59 UTC
+API    : http://127.0.0.1:8785
+
+SUMMARY: P3d live: PYTHONPATH-run fix + Audit-Seed
+NOTE   : Fix: Importpfad im run; Add: Audit-Einträge + Verify; Impact: stabiler Start & forensische Nachvollziehbarkeit

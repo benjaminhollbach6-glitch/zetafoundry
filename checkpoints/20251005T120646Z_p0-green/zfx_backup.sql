@@ -1,0 +1,58 @@
+BEGIN TRANSACTION;
+CREATE TABLE docs(id integer primary key, title text, content text, ts integer default (strftime('%s','now')));
+INSERT INTO "docs" VALUES(1,'sample.txt::0','ZETAFOUNDRY Scriptbot+Chat. FTS5 BM25, VortexShardRank, SigmaEntropyKeys, ChronicleMemory.',1759663516);
+INSERT INTO "docs" VALUES(2,'sample.txt::0','ZETAFOUNDRY Scriptbot+Chat. FTS5 BM25, VortexShardRank, SigmaEntropyKeys, ChronicleMemory.',1759663536);
+INSERT INTO "docs" VALUES(3,'sample.txt::0','ZETAFOUNDRY Scriptbot+Chat. FTS5 BM25, VortexShardRank, SigmaEntropyKeys, ChronicleMemory.',1759664734);
+INSERT INTO "docs" VALUES(4,'zfx_readme.txt::0','ZETAFOUNDRY Knowledge
+Termux, FTS5, BM25, Prometheus
+',1759665688);
+PRAGMA writable_schema=ON;
+INSERT INTO sqlite_master(type,name,tbl_name,rootpage,sql)VALUES('table','docs_fts','docs_fts',0,'CREATE VIRTUAL TABLE docs_fts using fts5(title, content, content=''docs'', content_rowid=''id'')');
+INSERT INTO "docs_fts" VALUES('sample.txt::0','ZETAFOUNDRY Scriptbot+Chat. FTS5 BM25, VortexShardRank, SigmaEntropyKeys, ChronicleMemory.');
+INSERT INTO "docs_fts" VALUES('sample.txt::0','ZETAFOUNDRY Scriptbot+Chat. FTS5 BM25, VortexShardRank, SigmaEntropyKeys, ChronicleMemory.');
+INSERT INTO "docs_fts" VALUES('sample.txt::0','ZETAFOUNDRY Scriptbot+Chat. FTS5 BM25, VortexShardRank, SigmaEntropyKeys, ChronicleMemory.');
+INSERT INTO "docs_fts" VALUES('zfx_readme.txt::0','ZETAFOUNDRY Knowledge
+Termux, FTS5, BM25, Prometheus
+');
+CREATE TABLE 'docs_fts_config'(k PRIMARY KEY, v) WITHOUT ROWID;
+INSERT INTO "docs_fts_config" VALUES('version',4);
+CREATE TABLE 'docs_fts_data'(id INTEGER PRIMARY KEY, block BLOB);
+INSERT INTO "docs_fts_data" VALUES(1,X'040D1E');
+INSERT INTO "docs_fts_data" VALUES(10,X'000000000104040004010101020101030101040101');
+INSERT INTO "docs_fts_data" VALUES(137438953473,X'0000009F0230300102040104626D323501060101060104636861740106010104030D726F6E69636C656D656D6F727901060101090104667473350106010105010673616D706C6501020202086372697074626F740106010103020F69676D61656E74726F70796B65797301060101080103747874010203010F766F72746578736861726472616E6B0106010107010B7A657461666F756E647279010601010204060B0B140B0B0F160816');
+INSERT INTO "docs_fts_data" VALUES(274877906945,X'0000009F0230300202040104626D323502060101060104636861740206010104030D726F6E69636C656D656D6F727902060101090104667473350206010105010673616D706C6502020202086372697074626F740206010103020F69676D61656E74726F70796B65797302060101080103747874020203010F766F72746578736861726472616E6B0206010107010B7A657461666F756E647279020601010204060B0B140B0B0F160816');
+INSERT INTO "docs_fts_data" VALUES(412316860417,X'0000009F0230300302040104626D323503060101060104636861740306010104030D726F6E69636C656D656D6F727903060101090104667473350306010105010673616D706C6503020202086372697074626F740306010103020F69676D61656E74726F70796B65797303060101080103747874030203010F766F72746578736861726472616E6B0306010107010B7A657461666F756E647279030601010204060B0B140B0B0F160816');
+INSERT INTO "docs_fts_data" VALUES(549755813889,X'000000790230300402050104626D32350406010106010466747335040601010501096B6E6F776C656467650406010103010A70726F6D65746865757304060101070106726561646D6504020301067465726D7578040601010402027874040204010B7A657461666F756E64727904060101020202667804020204060B0B10110B0D0712');
+CREATE TABLE 'docs_fts_docsize'(id INTEGER PRIMARY KEY, sz BLOB);
+INSERT INTO "docs_fts_docsize" VALUES(1,X'0308');
+INSERT INTO "docs_fts_docsize" VALUES(2,X'0308');
+INSERT INTO "docs_fts_docsize" VALUES(3,X'0308');
+INSERT INTO "docs_fts_docsize" VALUES(4,X'0406');
+CREATE TABLE 'docs_fts_idx'(segid, term, pgno, PRIMARY KEY(segid, term)) WITHOUT ROWID;
+INSERT INTO "docs_fts_idx" VALUES(1,X'',2);
+INSERT INTO "docs_fts_idx" VALUES(2,X'',2);
+INSERT INTO "docs_fts_idx" VALUES(3,X'',2);
+INSERT INTO "docs_fts_idx" VALUES(4,X'',2);
+CREATE TABLE memory(
+        id integer primary key,
+        session_id text,
+        role text,
+        text text,
+        ts integer
+      );
+INSERT INTO "memory" VALUES(1,'alpha','user','ZETAFOUNDRY läuft auf Port 8785 unter Termux.',1759664748);
+CREATE TABLE sessions(id text primary key, created integer);
+INSERT INTO "sessions" VALUES('alpha',1759664748);
+CREATE TRIGGER docs_ai after insert on docs begin
+        insert into docs_fts(rowid,title,content) values (new.id,new.title,new.content);
+      end;
+CREATE TRIGGER docs_au after update on docs begin
+        insert into docs_fts(docs_fts,rowid,title,content) values('delete',old.id,old.title,old.content);
+        insert into docs_fts(rowid,title,content) values (new.id,new.title,new.content);
+      end;
+CREATE TRIGGER docs_ad after delete on docs begin
+        insert into docs_fts(docs_fts,rowid,title,content) values('delete',old.id,old.title,old.content);
+      end;
+CREATE INDEX mem_sess_ts on memory(session_id, ts);
+PRAGMA writable_schema=OFF;
+COMMIT;

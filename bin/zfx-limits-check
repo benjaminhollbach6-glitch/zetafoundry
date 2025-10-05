@@ -1,0 +1,50 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -Eeuo pipefail
+export LC_ALL=C.UTF-8
+HOST="${HOST:-127.0.0.1}"; PORT="${ZFX_PORT:-8785}"
+BIN="${BIN:-$HOME/neon/nx/projects/zetafoundry/bin}"
+
+ok(){  printf "\033[1;32m[OK]\033[0m %s\n" "$*"; }
+err(){ printf "\033[1;31m[ERR]\033[0m %s\n" "$*" >&2; }
+
+# a) Health abwarten (max 30s)
+"$BIN/zfx-wait" 30 >/dev/null || { err "Dienst nicht bereit"; exit 5; }
+
+# b) /limits holen & parsen
+JSON="$(curl -fsS "http://$HOST:$PORT/limits")" || { err "/limits nicht erreichbar"; exit 2; }
+echo "$JSON" | jq . >/dev/null 2>&1 || { err "/limits liefert kein JSON"; exit 2; }
+RW="$(echo "$JSON" | jq -r '.RATE_WINDOW')" ; RM="$(echo "$JSON" | jq -r '.RATE_MAX')" ; MB="$(echo "$JSON" | jq -r '.MAX_BODY')"
+printf "[INFO] RW=%s  RM=%s  MAX_BODY=%s\n" "$RW" "$RM" "$MB"
+
+# c) 413-Test (Body > MAX_BODY)
+RC=$(
+python - <<PY
+import json, urllib.request, os
+host=os.environ.get("HOST","127.0.0.1"); port=int(os.environ.get("PORT","8785"))
+mb=int(os.environ.get("MB","0"))
+big="x"*(mb+1)
+req=urllib.request.Request(f"http://{host}:{port}/ask",
+    data=json.dumps({"session":"alpha","q":big}).encode("utf-8"),
+    headers={"Content-Type":"application/json"}, method="POST")
+try:
+    with urllib.request.urlopen(req) as r: print(r.status)
+except Exception as e:
+    print(getattr(e,"code","ERR"))
+PY
+)
+[ "$RC" = "413" ] && ok "413 Payload Too Large wie erwartet" || err "erwartet 413, bekam $RC"
+
+# d) 429-Test (Burst > RATE_MAX in RATE_WINDOW)
+C=0; R429=0
+for i in $(seq 1 $((RM+8))); do
+  RC=$(curl -s -o /dev/null -w "%{http_code}" -XPOST "http://$HOST:$PORT/ask" \
+       -H 'Content-Type: application/json' -d '{"session":"alpha","q":"ping"}')
+  [ "$RC" = "429" ] && R429=$((R429+1))
+  C=$((C+1))
+done
+[ "$R429" -ge 1 ] && ok "Rate-Limit greift (>=1x 429 in $C Requests)" || err "Rate-Limit NICHT ausgelöst"
+
+echo
+echo "== LIMITS-CHECK Summary ======================"
+echo "Limits : $(echo "$JSON" | tr -d '\n')"
+echo "429    : $R429 / $C Requests"

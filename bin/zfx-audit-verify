@@ -1,0 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -Eeuo pipefail
+H="${ZFX_HOST:-127.0.0.1}"
+P="${ZFX_PORT:-8785}"
+curl -fsS "http://$H:$P/audit/verify" | jq

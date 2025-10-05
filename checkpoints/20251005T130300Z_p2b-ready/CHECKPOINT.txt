@@ -1,0 +1,7 @@
+STAMP  : 20251005T130300Z
+LABEL  : p2b-ready
+TIME   : 2025-10-05 13:03:00 UTC
+API    : http://127.0.0.1:8785
+
+SUMMARY: P2b Readiness-Gate + Limits-Check grün
+NOTE   : Add: zfx-wait + robuster verifier; Impact: deterministische 413/429 & saubere Restarts

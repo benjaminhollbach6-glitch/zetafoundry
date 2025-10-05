@@ -1,0 +1,7 @@
+STAMP  : 20251005T125110Z
+LABEL  : p1-schema-green
+TIME   : 2025-10-05 12:51:10 UTC
+API    : http://127.0.0.1:8785
+
+SUMMARY: P1 Schema aktiv (v1), API stabil, Dev-Env Wrapper
+NOTE   : Fix: pydantic-core Rust-Build umgangen; Reason: CPython 3.12 Termux; Impact: stabiler Start + valide 4xx/5xx

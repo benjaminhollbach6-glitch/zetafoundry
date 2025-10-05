@@ -1,0 +1,26 @@
+# Quelle mit:  . ~/neon/nx/projects/zetafoundry/bin/zfx-env
+ZFX_ROOT="$HOME/neon/nx/projects/zetafoundry"
+ZFX_APP="$ZFX_ROOT/app"
+ZFX_VENV="$ZFX_ROOT/.venv"
+
+if [ ! -f "$ZFX_VENV/bin/activate" ]; then
+  echo "[ERR] venv nicht gefunden: $ZFX_VENV" >&2
+  # Wenn gesourced -> return, sonst exit
+  (return 2 2>/dev/null) || exit 2
+fi
+
+# venv aktivieren (sourcen)
+. "$ZFX_VENV/bin/activate"
+
+# Projektpfad nach vorne setzen
+if [ -z "${PYTHONPATH+x}" ] || [ -z "$PYTHONPATH" ]; then
+  export PYTHONPATH="$ZFX_APP"
+else
+  case ":$PYTHONPATH:" in
+    *":$ZFX_APP:"*) : ;;  # schon drin
+    *) export PYTHONPATH="$ZFX_APP:$PYTHONPATH" ;;
+  esac
+fi
+
+echo "[OK] zfx-env aktiv: VIRTUAL_ENV=$VIRTUAL_ENV"
+echo "[OK] PYTHONPATH=$PYTHONPATH"

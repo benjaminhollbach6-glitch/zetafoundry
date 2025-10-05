@@ -1,0 +1,13 @@
+# HELP zfx_requests_total HTTP requests
+# TYPE zfx_requests_total counter
+zfx_requests_total{code="200",path="/health"} 2.0
+# HELP zfx_requests_created HTTP requests
+# TYPE zfx_requests_created gauge
+zfx_requests_created{code="200",path="/health"} 1.7596710535126772e+09
+# HELP zfx_request_seconds Latency
+# TYPE zfx_request_seconds histogram
+# HELP zfx_errors_total Errors
+# TYPE zfx_errors_total counter
+# HELP zfx_up UP
+# TYPE zfx_up gauge
+zfx_up 1.0

@@ -1,0 +1,4 @@
+httpx>=0.28,<0.29
+pytest>=8,<9
+fastjsonschema>=2.19,<3
+jsonschema<4.18

@@ -1,0 +1,7 @@
+STAMP  : 20251005T132114Z
+LABEL  : p3-audit
+TIME   : 2025-10-05 13:21:14 UTC
+API    : http://127.0.0.1:8785
+
+SUMMARY: P3 Audit-Trail (HMAC Chain) live: Middleware + /audit + /audit/verify
+NOTE   : Add: unverfälschbarer Request/Response-Trail; Impact: forensisch sichere Nachvollziehbarkeit

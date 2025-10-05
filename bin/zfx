@@ -1,0 +1,9 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# ZETAFOUNDRY CLI shim (robust PYTHONPATH)
+set -euo pipefail
+ROOT="$HOME/neon/nx/projects/zetafoundry"
+. "$ROOT/.venv/bin/activate"
+APP_PATH="$ROOT/app"
+PYTHONPATH="${PYTHONPATH:-}"
+export PYTHONPATH="${APP_PATH}${PYTHONPATH:+:$PYTHONPATH}"
+exec python "$APP_PATH/cli.py" "$@"

@@ -1,0 +1,1 @@
+ZETAFOUNDRY Scriptbot+Chat. FTS5 BM25, VortexShardRank, SigmaEntropyKeys, ChronicleMemory.

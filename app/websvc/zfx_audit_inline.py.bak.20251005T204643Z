@@ -1,0 +1,354 @@
+from __future__ import annotations
+import json, os, time
+from typing import Any, Dict, List
+from urllib.parse import parse_qs
+
+# ---- Pfade --------------------------------------------------------------------
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+AUDIT_PATH = os.path.join(ROOT, "data", "audit.jsonl")
+try:
+    from core.audit import AUDIT_PATH as _AP
+    if _AP: AUDIT_PATH = _AP
+except Exception:
+    pass
+
+# ---- JSON Response (Starlette bevorzugt, Fallback ASGI) -----------------------
+try:
+    from starlette.responses import JSONResponse as _SR  # type: ignore
+    def _json(payload: Dict[str, Any], status: int = 200):
+        return _SR(payload, status_code=status, headers={"cache-control": "no-store"})
+except Exception:
+    def _json(payload: Dict[str, Any], status: int = 200):
+        body = json.dumps(payload, separators=(",", ":")).encode("utf-8")
+        async def _asgi(scope, receive, send):
+            headers = [
+                (b"content-type", b"application/json"),
+                (b"content-length", str(len(body)).encode("utf-8")),
+                (b"cache-control", b"no-store"),
+            ]
+            await send({"type": "http.response.start", "status": status, "headers": headers})
+            await send({"type": "http.response.body", "body": body})
+        return _asgi
+
+# ---- Helpers ------------------------------------------------------------------
+def _safe_int(x, default: int) -> int:
+    try: return int(x)
+    except Exception: return default
+
+def _read_audit_lines() -> List[Dict[str, Any]]:
+    out: List[Dict[str, Any]] = []
+    try:
+        with open(AUDIT_PATH, "rb") as f:
+            for line in f:
+                try:
+                    out.append(json.loads(line))
+                except Exception:
+                    pass
+    except FileNotFoundError:
+        pass
+    return out
+
+# ---- Payloads -----------------------------------------------------------------
+def _tail_payload(limit_val: str | int = 10) -> Dict[str, Any]:
+    try:
+        from core.audit import audit_tail  # bevorzugt die Core-Implementierung
+        l = max(1, min(_safe_int(limit_val, 10), 1000))
+        entries = audit_tail(l)
+        return {"entries": entries, "count": len(entries)}
+    except Exception:
+        l = max(1, min(_safe_int(limit_val, 10), 1000))
+        rows = _read_audit_lines()
+        rows = rows[-l:] if l < len(rows) else rows
+        return {"entries": rows, "count": len(rows)}
+
+def _verify_payload() -> Dict[str, Any]:
+    try:
+        from core.audit import audit_verify
+        data = audit_verify()
+        if not isinstance(data, dict):
+            return {"ok": False, "issues": ["invalid audit_verify return"], "checked": 0}
+        return data
+    except Exception as e:
+        return {"ok": False, "issues": [str(e)], "checked": 0}
+
+def _stats_payload() -> Dict[str, Any]:
+    rows = _read_audit_lines()
+    size = 0
+    try: size = os.path.getsize(AUDIT_PATH)
+    except Exception: pass
+    first = None
+    last = None
+    if rows:
+        f = rows[0]; l = rows[-1]
+        first = {"id": f.get("id"), "ts": f.get("ts"), "path": f.get("path"), "hmac": f.get("hmac")}
+        last  = {"id": l.get("id"), "ts": l.get("ts"), "path": l.get("path"), "hmac": l.get("hmac")}
+    return {"count": len(rows), "size_bytes": size, "first": first, "last": last}
+
+def _rates_payload(qs: str) -> Dict[str, Any]:
+    """
+    w=CSV Sekundenfenster (z.B. 5,15,60), path=/ask optional, dec=0..6 Dezimalstellen
+    """
+    q = parse_qs(qs or "", keep_blank_values=False)
+    w = q.get("w", ["5,60,300"])[0]
+    windows = []
+    for x in str(w).split(","):
+        x = x.strip()
+        if x: 
+            try: windows.append(int(x))
+            except Exception: pass
+    if not windows:
+        windows = [5, 60, 300]
+
+    dec = _safe_int(q.get("dec", [3])[0], 3)
+    dec = min(6, max(0, dec))
+    path_filter = q.get("path", [None])[0]
+
+    ts: List[int] = []
+    rows = _read_audit_lines()
+    for rec in rows:
+        if path_filter and rec.get("path") != path_filter:
+            continue
+        t = rec.get("ts")
+        if isinstance(t, int):
+            ts.append(t)
+    ts.sort()
+
+    out: Dict[str, Any] = {}
+    now_ms = ts[-1] if ts else int(time.time() * 1000)
+
+    for wsec in windows:
+        cutoff = now_ms - wsec * 1000
+        c = 0
+        # ts ist sortiert → linear zählen
+        for t in reversed(ts):
+            if t >= cutoff: c += 1
+            else: break
+        out[f"count_{wsec}s"] = c
+        out[f"rps_{wsec}s"] = round(c / float(wsec), dec)
+
+    out["overall_count"] = len(ts)
+    if len(ts) > 1:
+        dur = max(1e-9, (ts[-1] - ts[0]) / 1000.0)
+        out["overall_rps"] = round(len(ts) / dur, dec)
+    else:
+        out["overall_rps"] = 0.0
+    return out
+
+# ---- HTTP Handler (Starlette/FastAPI kompatibel) ------------------------------
+async def _audit_tail(request):
+    qs = request.url.query if hasattr(request, "url") else ""
+    limit = parse_qs(qs).get("limit", ["10"])[0]
+    return _json(_tail_payload(limit))
+
+async def _audit_verify(request):
+    return _json(_verify_payload())
+
+async def _audit_stats(request):
+    return _json(_stats_payload())
+
+# ---- Installer ----------------------------------------------------------------
+def install(app) -> str:
+    """
+    Idempotent; installiert/aktualisiert /audit, /audit/verify, /audit/stats, /audit/rates.
+    Arbeitet auf der inneren Starlette/FastAPI-App (falls durch Middleware gewrappt).
+    """
+    base = getattr(app, "app", app)
+
+    # ggf. bestehende Routen mit denselben Pfaden entfernen
+    paths = {"/audit", "/audit/verify", "/audit/stats", "/audit/rates"}
+    router = getattr(base, "router", None)
+    if router and hasattr(router, "routes"):
+        router.routes = [r for r in router.routes if getattr(r, "path", None) not in paths]
+
+    add = getattr(base, "add_route", None) or getattr(base, "add_api_route", None)
+    if not add:
+        raise RuntimeError("app has no add_route/add_api_route")
+
+    add("/audit",         _audit_tail,   methods=["GET"])
+    add("/audit/verify",  _audit_verify, methods=["GET"])
+    add("/audit/stats",   _audit_stats,  methods=["GET"])
+    add("/audit/rates",   _audit_rates,  methods=["GET"])
+    return "starlette"
+# --- [patch] Harden _rates_payload: validate windows/dec & efficient counting --
+try:
+    import time, json
+    from bisect import bisect_left
+
+    def _rates_payload_hardened(query_params):
+        def _first(q, k, default=None):
+            v = q.get(k, default)
+            return v[0] if isinstance(v, list) else v
+
+        # windows: CSV → ints ∩ [1..3600], de-duped, capped to 8
+        raw = _first(query_params, "w", "5,60,300")
+        windows, seen = [], set()
+        for tok in str(raw).split(","):
+            tok = tok.strip()
+            if not tok:
+                continue
+            try:
+                w = int(tok)
+                if 1 <= w <= 3600 and w not in seen:
+                    windows.append(w); seen.add(w)
+            except Exception:
+                pass
+        if not windows:
+            windows = [5, 60, 300]
+        windows = windows[:8]
+
+        # decimals: 0..6
+        dec = _first(query_params, "dec", 3)
+        try:
+            dec = max(0, min(int(dec), 6))
+        except Exception:
+            dec = 3
+
+        # optional path filter
+        path_filter = _first(query_params, "path", None)
+        path_filter = str(path_filter) if path_filter else None
+
+        # collect timestamps (filtered)
+        ts = []
+        try:
+            with open(AUDIT_PATH, "rb") as f:
+                for line in f:
+                    try:
+                        rec = json.loads(line)
+                        if path_filter and rec.get("path") != path_filter:
+                            continue
+                        t = rec.get("ts")
+                        if isinstance(t, int):
+                            ts.append(t)
+                    except Exception:
+                        continue
+        except FileNotFoundError:
+            pass
+
+        out = {}
+        n = len(ts)
+        if n:
+            ts.sort()
+            now_ms = int(time.time() * 1000)
+            for w in windows:
+                cutoff = now_ms - (w * 1000)
+                idx = bisect_left(ts, cutoff)  # first ts >= cutoff
+                c = max(0, n - idx)
+                out[f"count_{w}s"] = c
+                out[f"rps_{w}s"]   = round(c / float(w), dec)
+
+            # overall stats (unabhängig von dec auf 3 Stellen)
+            out["overall_count"] = n
+            if n >= 2:
+                dur = max(1e-9, (ts[-1] - ts[0]) / 1000.0)
+                out["overall_rps"] = round(n / dur, 3)
+            else:
+                out["overall_rps"] = 0.0
+        else:
+            for w in windows:
+                out[f"count_{w}s"] = 0
+                out[f"rps_{w}s"]   = 0.0
+            out["overall_count"] = 0
+            out["overall_rps"]   = 0.0
+        return out
+
+    # aktivieren
+    _rates_payload = _rates_payload_hardened  # type: ignore
+except Exception:
+    pass
+# --- end patch ----------------------------------------------------------------
+def _rates_payload(query_params):
+    import time, json
+    from bisect import bisect_left
+
+    def _first(q, k, default=None):
+        v = q.get(k, default)
+        return v[0] if isinstance(v, list) else v
+
+    # windows: CSV -> ints in [1..3600], de-dupe, max 8
+    raw = _first(query_params, "w", "5,60,300")
+    windows, seen = [], set()
+    for tok in str(raw).split(","):
+        tok = tok.strip()
+        if not tok:
+            continue
+        try:
+            w = int(tok)
+            if 1 <= w <= 3600 and w not in seen:
+                windows.append(w); seen.add(w)
+        except Exception:
+            pass
+    if not windows:
+        windows = [5, 60, 300]
+    windows = windows[:8]
+
+    # decimals clamp 0..6
+    dec_raw = _first(query_params, "dec", 3)
+    try:
+        dec = max(0, min(int(dec_raw), 6))
+    except Exception:
+        dec = 3
+
+    # optional path filter
+    pf = _first(query_params, "path", None)
+    path_filter = str(pf) if pf else None
+
+    # collect timestamps
+    ts = []
+    try:
+        with open(AUDIT_PATH, "rb") as f:
+            for line in f:
+                try:
+                    rec = json.loads(line)
+                except Exception:
+                    continue
+                if path_filter and rec.get("path") != path_filter:
+                    continue
+                t = rec.get("ts")
+                if isinstance(t, int):
+                    ts.append(t)
+    except FileNotFoundError:
+        pass
+
+    out = {}
+    n = len(ts)
+    if n:
+        ts.sort()
+        now_ms = int(time.time() * 1000)
+        for w in windows:
+            cutoff = now_ms - w*1000
+            idx = bisect_left(ts, cutoff)  # first ts >= cutoff
+            c = max(0, n - idx)
+            out[f"count_{w}s"] = c
+            out[f"rps_{w}s"]   = round(c/float(w), dec)
+        out["overall_count"] = n
+        if n >= 2:
+            dur = max(1e-9, (ts[-1]-ts[0])/1000.0)
+            out["overall_rps"] = round(n/dur, 3)
+        else:
+            out["overall_rps"] = 0.0
+    else:
+        for w in windows:
+            out[f"count_{w}s"] = 0
+            out[f"rps_{w}s"]   = 0.0
+        out["overall_count"] = 0
+        out["overall_rps"]   = 0.0
+    return out
+from starlette.responses import JSONResponse
+
+
+async def _audit_rates(request):
+    from starlette.responses import JSONResponse
+    import logging, traceback
+
+    log = logging.getLogger("zfx.audit")
+    try:
+        payload = _rates_payload(request.query_params)
+        return JSONResponse(payload, headers={"Cache-Control": "no-store"})
+    except Exception as e:
+        log.exception("rates failed")
+        return JSONResponse(
+            {"ok": False, "error": str(e), "trace": traceback.format_exc()},
+            status_code=500,
+            headers={"Cache-Control": "no-store"},
+        )
+

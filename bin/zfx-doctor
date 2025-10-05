@@ -1,0 +1,59 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# ZETAFOUNDRY • zfx-doctor • End-to-end Smoke (Env/DB/API/runit)
+set -Eeuo pipefail
+export LC_ALL=C.UTF-8
+
+PREFIX="/data/data/com.termux/files/usr"
+HOME_DIR="${HOME:-/data/data/com.termux/files/home}"
+ROOT="$HOME_DIR/neon/nx/projects/zetafoundry"
+APP="$ROOT/app"
+VENV="$ROOT/.venv"
+HOST="127.0.0.1"; PORT="${ZFX_PORT:-8785}"
+
+ok(){  printf "\033[1;32m[OK]\033[0m %s\n" "$*"; }
+err(){ printf "\033[1;31m[ERR]\033[0m %s\n" "$*" >&2; }
+
+[ -x "$VENV/bin/python" ] || { err "Venv fehlt: $VENV"; exit 2; }
+
+# 1) Env
+. "$VENV/bin/activate"
+export PYTHONPATH="$APP${PYTHONPATH:+:$PYTHONPATH}"
+python - <<'PY' || { err "Python-Import (kb) FAIL"; exit 3; }
+import os
+print("VENV:", os.environ.get("VIRTUAL_ENV"))
+print("PYTHONPATH:", os.environ.get("PYTHONPATH"))
+import kb.index as k
+print("DB:", k.db_path())
+PY
+ok "Env/Import OK"
+
+# 2) API
+curl -fsS "http://$HOST:$PORT/health" >/dev/null && ok "API /health OK" || { err "API /health FAIL"; exit 4; }
+
+# 3) /ask (zwei Problem-Prompts von früher)
+for Q in \
+  'Gib mir eine präzise 3-Satz-Zusammenfassung des Projekts.' \
+  'Welche Module, Services und Endpunkte hat ZETAFOUNDRY?'
+do
+  curl -fsS -XPOST "http://$HOST:$PORT/ask" -H 'Content-Type: application/json' \
+    -d "{\"session\":\"doctor\",\"q\":\"$Q\"}" >/dev/null || { err "/ask FAIL: $Q"; exit 5; }
+done
+ok "API /ask OK"
+
+# 4) /gen (Bash-Stencil)
+curl -fsS -XPOST "http://$HOST:$PORT/gen" -H 'Content-Type: application/json' \
+  -d '{"prompt":"installer+service+health (bash)","variants":1}' >/dev/null \
+  && ok "API /gen OK" || { err "API /gen FAIL"; exit 6; }
+
+# 5) Services (zetafoundry + mytermuxsvc)
+if command -v sv >/dev/null 2>&1; then
+  sv status zetafoundry || true
+  sv status mytermuxsvc || true
+fi
+
+echo
+echo "== DOCTOR SUMMARY ==============================="
+echo "Env     : OK"
+echo "API     : /health /ask /gen OK"
+echo "Services: siehe sv status oben"
+echo "Status  : OK"

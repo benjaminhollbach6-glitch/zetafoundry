@@ -1,0 +1,7 @@
+STAMP  : 20251005T131305Z
+LABEL  : p2f-logger-green
+TIME   : 2025-10-05 13:13:05 UTC
+API    : http://127.0.0.1:8785
+
+SUMMARY: P2f Logger Auto-Fix (svlogd→pipe fallback), Log green
+NOTE   : Fix: runit log down; Reason: svlogd exit; Impact: garantiertes run: log + verwertbare Logs

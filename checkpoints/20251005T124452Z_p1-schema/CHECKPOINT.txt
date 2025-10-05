@@ -1,0 +1,7 @@
+STAMP  : 20251005T124452Z
+LABEL  : p1-schema
+TIME   : 2025-10-05 12:44:52 UTC
+API    : http://127.0.0.1:8785
+
+SUMMARY: P1 Schema-Härtung aktiv – konsistente 4xx/5xx + /schema
+NOTE   : Fix: strikte Payload-Validierung; Reason: robuste API-Semantik; Impact: stabilere Integrationen

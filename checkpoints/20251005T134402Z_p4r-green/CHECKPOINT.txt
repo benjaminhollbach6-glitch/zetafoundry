@@ -1,0 +1,8 @@
+STAMP  : 20251005T134402Z
+LABEL  : p4r-green
+TIME   : 2025-10-05 13:44:02 UTC
+API    : http://127.0.0.1:8785
+
+SUMMARY: P4r green: Sanitizer+SafeSearch repariert; /ask Smoke 200/200
+NOTE   : <leer>
+NOTE: Fix: defekter Here-Doc & Query-Normalisierung; Reason: kaputte Here-Doc-Einfügung; Impact: stabile FTS/LIKE-Suche & robuste /ask

@@ -1,0 +1,13 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -Eeuo pipefail
+H="${ZFX_HOST:-127.0.0.1}"
+P="${ZFX_PORT:-8785}"
+curl -fsS "http://$H:$P/audit/stats" | jq '
+  {
+    count,
+    size_kib: (.size_bytes/1024|round),
+    first_ts: .first.ts,
+    first_path: .first.path,
+    last_ts: .last.ts,
+    last_path: .last.path
+  }'

@@ -1,0 +1,17 @@
+# HELP zfx_requests_total HTTP requests
+# TYPE zfx_requests_total counter
+zfx_requests_total{code="422",path="/ask"} 2.0
+zfx_requests_total{code="413",path="/ask"} 1.0
+zfx_requests_total{code="200",path="/health"} 3.0
+# HELP zfx_requests_created HTTP requests
+# TYPE zfx_requests_created gauge
+zfx_requests_created{code="422",path="/ask"} 1.7596695155204115e+09
+zfx_requests_created{code="413",path="/ask"} 1.7596695156815805e+09
+zfx_requests_created{code="200",path="/health"} 1.759669524138655e+09
+# HELP zfx_request_seconds Latency
+# TYPE zfx_request_seconds histogram
+# HELP zfx_errors_total Errors
+# TYPE zfx_errors_total counter
+# HELP zfx_up UP
+# TYPE zfx_up gauge
+zfx_up 1.0

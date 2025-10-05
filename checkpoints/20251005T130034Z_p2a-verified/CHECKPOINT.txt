@@ -1,0 +1,7 @@
+STAMP  : 20251005T130034Z
+LABEL  : p2a-verified
+TIME   : 2025-10-05 13:00:34 UTC
+API    : http://127.0.0.1:8785
+
+SUMMARY: Limits persistent verifiziert (RW=2.5 RM=10 MB=512KiB)
+NOTE   : Add: zfx-limits-check; Impact: reproduzierbare 413/429-Guards

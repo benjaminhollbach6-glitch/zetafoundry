@@ -1,0 +1,7 @@
+STAMP  : 20251005T163613Z
+LABEL  : p3i-audit-rates
+TIME   : 2025-10-05 16:36:13 UTC
+API    : http://127.0.0.1:8785
+
+SUMMARY: <leer>
+NOTE   : <leer>

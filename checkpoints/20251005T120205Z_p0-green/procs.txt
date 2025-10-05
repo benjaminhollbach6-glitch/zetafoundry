@@ -1,0 +1,1 @@
+25636 14807       05:44 /data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/bin/python /data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/bin/uvicorn websvc.api:app --host 127.0.0.1 --port 8785

@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -euo pipefail
+ROOT="$HOME/neon/nx/projects/zetafoundry"
+. "$ROOT/.venv/bin/activate"
+export PYTHONPATH="$ROOT/app${PYTHONPATH:+:$PYTHONPATH}"
+exec python "$@"

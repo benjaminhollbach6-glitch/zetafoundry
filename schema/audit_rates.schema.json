@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "required": ["windows", "overall"],
+  "additionalProperties": false,
+  "properties": {
+    "windows": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["w", "count", "rps"],
+        "additionalProperties": false,
+        "properties": {
+          "w":     { "type": "integer", "minimum": 1, "maximum": 3600 },
+          "count": { "type": "integer", "minimum": 0 },
+          "rps":   { "type": "number",  "minimum": 0 }
+        }
+      }
+    },
+    "overall": {
+      "type": "object",
+      "required": ["count", "rps"],
+      "additionalProperties": false,
+      "properties": {
+        "count": { "type": "integer", "minimum": 0 },
+        "rps":   { "type": "number",  "minimum": 0 }
+      }
+    }
+  }
+}

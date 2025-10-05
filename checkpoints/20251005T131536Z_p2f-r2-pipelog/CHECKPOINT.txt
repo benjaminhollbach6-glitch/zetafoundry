@@ -1,0 +1,7 @@
+STAMP  : 20251005T131536Z
+LABEL  : p2f-r2-pipelog
+TIME   : 2025-10-05 13:15:37 UTC
+API    : http://127.0.0.1:8785
+
+SUMMARY: P2f-r2 Pipe-Logger erzwungen, run: log stabil
+NOTE   : Workaround: svlogd flapped; Impact: konsistente Logs & grüner runit-Status

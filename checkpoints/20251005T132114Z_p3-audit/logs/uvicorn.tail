@@ -1,0 +1,1000 @@
+[2025-10-05T13:20:56Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1462, in __call__
+[2025-10-05T13:20:56Z]     return self.main(*args, **kwargs)
+[2025-10-05T13:20:56Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:56Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1383, in main
+[2025-10-05T13:20:56Z]     rv = self.invoke(ctx)
+[2025-10-05T13:20:56Z]          ^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:56Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1246, in invoke
+[2025-10-05T13:20:56Z]     return ctx.invoke(self.callback, **ctx.params)
+[2025-10-05T13:20:56Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:56Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 814, in invoke
+[2025-10-05T13:20:56Z]     return callback(*args, **kwargs)
+[2025-10-05T13:20:56Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:56Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 423, in main
+[2025-10-05T13:20:56Z]     run(
+[2025-10-05T13:20:56Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 593, in run
+[2025-10-05T13:20:56Z]     server.run()
+[2025-10-05T13:20:56Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 67, in run
+[2025-10-05T13:20:56Z]     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+[2025-10-05T13:20:56Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:56Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 195, in run
+[2025-10-05T13:20:56Z]     return runner.run(main)
+[2025-10-05T13:20:56Z]            ^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:56Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+[2025-10-05T13:20:56Z]     return self._loop.run_until_complete(task)
+[2025-10-05T13:20:56Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:56Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+[2025-10-05T13:20:56Z]     return future.result()
+[2025-10-05T13:20:56Z]            ^^^^^^^^^^^^^^^
+[2025-10-05T13:20:56Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 71, in serve
+[2025-10-05T13:20:56Z]     await self._serve(sockets)
+[2025-10-05T13:20:56Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 78, in _serve
+[2025-10-05T13:20:56Z]     config.load()
+[2025-10-05T13:20:57Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/config.py", line 438, in load
+[2025-10-05T13:20:57Z]     self.loaded_app = import_from_string(self.app)
+[2025-10-05T13:20:57Z]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:57Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 22, in import_from_string
+[2025-10-05T13:20:57Z]     raise exc from None
+[2025-10-05T13:20:57Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[2025-10-05T13:20:57Z]     module = importlib.import_module(module_str)
+[2025-10-05T13:20:57Z]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:57Z]   File "/data/data/com.termux/files/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+[2025-10-05T13:20:57Z]     return _bootstrap._gcd_import(name[level:], package, level)
+[2025-10-05T13:20:57Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:57Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:20:57Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:20:57Z]   File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+[2025-10-05T13:20:57Z]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+[2025-10-05T13:20:57Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:20:57Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:20:57Z]   File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+[2025-10-05T13:20:57Z] ModuleNotFoundError: No module named 'websvc'
+[2025-10-05T13:20:57Z] [BOOT] fold-logger active, awkpid=23841 @ 2025-10-05T13:20:57Z
+[2025-10-05T13:20:57Z] Traceback (most recent call last):
+[2025-10-05T13:20:57Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/bin/uvicorn", line 7, in <module>
+[2025-10-05T13:20:57Z]     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+[2025-10-05T13:20:57Z]     sys.exit(main())
+[2025-10-05T13:20:57Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:57Z]              ^^^^^^
+[2025-10-05T13:20:57Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 195, in run
+[2025-10-05T13:20:57Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1462, in __call__
+[2025-10-05T13:20:57Z]     return self.main(*args, **kwargs)
+[2025-10-05T13:20:57Z]     return runner.run(main)
+[2025-10-05T13:20:57Z]            ^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:57Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:57Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+[2025-10-05T13:20:57Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1383, in main
+[2025-10-05T13:20:57Z]     return self._loop.run_until_complete(task)
+[2025-10-05T13:20:57Z]     rv = self.invoke(ctx)
+[2025-10-05T13:20:57Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:57Z]          ^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:57Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+[2025-10-05T13:20:57Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1246, in invoke
+[2025-10-05T13:20:57Z]     return future.result()
+[2025-10-05T13:20:57Z]     return ctx.invoke(self.callback, **ctx.params)
+[2025-10-05T13:20:57Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:57Z]            ^^^^^^^^^^^^^^^
+[2025-10-05T13:20:57Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 814, in invoke
+[2025-10-05T13:20:57Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 71, in serve
+[2025-10-05T13:20:57Z]     return callback(*args, **kwargs)
+[2025-10-05T13:20:57Z]     await self._serve(sockets)
+[2025-10-05T13:20:57Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:57Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 78, in _serve
+[2025-10-05T13:20:57Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 423, in main
+[2025-10-05T13:20:57Z]     config.load()
+[2025-10-05T13:20:57Z]     run(
+[2025-10-05T13:20:57Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/config.py", line 438, in load
+[2025-10-05T13:20:57Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 593, in run
+[2025-10-05T13:20:57Z]     self.loaded_app = import_from_string(self.app)
+[2025-10-05T13:20:57Z]     server.run()
+[2025-10-05T13:20:57Z]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:57Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 67, in run
+[2025-10-05T13:20:57Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 22, in import_from_string
+[2025-10-05T13:20:57Z]     raise exc from None
+[2025-10-05T13:20:57Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[2025-10-05T13:20:57Z]     module = importlib.import_module(module_str)
+[2025-10-05T13:20:57Z]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:57Z]   File "/data/data/com.termux/files/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+[2025-10-05T13:20:57Z]     return _bootstrap._gcd_import(name[level:], package, level)
+[2025-10-05T13:20:57Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:57Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:20:57Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:20:57Z]   File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+[2025-10-05T13:20:57Z]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+[2025-10-05T13:20:57Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:20:57Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:20:57Z]   File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+[2025-10-05T13:20:57Z] ModuleNotFoundError: No module named 'websvc'
+[2025-10-05T13:20:58Z] [BOOT] fold-logger active, awkpid=23910 @ 2025-10-05T13:20:58Z
+[2025-10-05T13:20:58Z] Traceback (most recent call last):
+[2025-10-05T13:20:58Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/bin/uvicorn", line 7, in <module>
+[2025-10-05T13:20:58Z]     sys.exit(main())
+[2025-10-05T13:20:58Z]              ^^^^^^
+[2025-10-05T13:20:58Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1462, in __call__
+[2025-10-05T13:20:58Z]     return self.main(*args, **kwargs)
+[2025-10-05T13:20:58Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:58Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1383, in main
+[2025-10-05T13:20:58Z]     rv = self.invoke(ctx)
+[2025-10-05T13:20:58Z]          ^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:58Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1246, in invoke
+[2025-10-05T13:20:58Z]     return ctx.invoke(self.callback, **ctx.params)
+[2025-10-05T13:20:58Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:58Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 814, in invoke
+[2025-10-05T13:20:58Z]     return callback(*args, **kwargs)
+[2025-10-05T13:20:58Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:58Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 423, in main
+[2025-10-05T13:20:58Z]     run(
+[2025-10-05T13:20:58Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 593, in run
+[2025-10-05T13:20:58Z]     server.run()
+[2025-10-05T13:20:58Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 67, in run
+[2025-10-05T13:20:58Z]     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+[2025-10-05T13:20:58Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:58Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 195, in run
+[2025-10-05T13:20:58Z]     return runner.run(main)
+[2025-10-05T13:20:58Z]            ^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:58Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+[2025-10-05T13:20:58Z]     return self._loop.run_until_complete(task)
+[2025-10-05T13:20:58Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:58Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+[2025-10-05T13:20:58Z]     return future.result()
+[2025-10-05T13:20:58Z]            ^^^^^^^^^^^^^^^
+[2025-10-05T13:20:58Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 71, in serve
+[2025-10-05T13:20:58Z]     await self._serve(sockets)
+[2025-10-05T13:20:58Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 78, in _serve
+[2025-10-05T13:20:59Z]     config.load()
+[2025-10-05T13:20:59Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/config.py", line 438, in load
+[2025-10-05T13:20:59Z]     self.loaded_app = import_from_string(self.app)
+[2025-10-05T13:20:59Z]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:59Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 22, in import_from_string
+[2025-10-05T13:20:59Z]     raise exc from None
+[2025-10-05T13:20:59Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[2025-10-05T13:20:59Z]     module = importlib.import_module(module_str)
+[2025-10-05T13:20:59Z]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:59Z]   File "/data/data/com.termux/files/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+[2025-10-05T13:20:59Z]     return _bootstrap._gcd_import(name[level:], package, level)
+[2025-10-05T13:20:59Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:59Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:20:59Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:20:59Z]   File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+[2025-10-05T13:20:59Z]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+[2025-10-05T13:20:59Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:20:59Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:20:59Z]   File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+[2025-10-05T13:20:59Z] [BOOT] fold-logger active, awkpid=23976 @ 2025-10-05T13:20:59Z
+[2025-10-05T13:20:59Z] ModuleNotFoundError: No module named 'websvc'
+[2025-10-05T13:20:59Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/bin/uvicorn", line 7, in <module>
+[2025-10-05T13:20:59Z] Traceback (most recent call last):
+[2025-10-05T13:20:59Z]     sys.exit(main())
+[2025-10-05T13:20:59Z]              ^^^^^^
+[2025-10-05T13:20:59Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1462, in __call__
+[2025-10-05T13:20:59Z]     return self.main(*args, **kwargs)
+[2025-10-05T13:20:59Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:59Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1383, in main
+[2025-10-05T13:20:59Z]     rv = self.invoke(ctx)
+[2025-10-05T13:20:59Z]          ^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:59Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1246, in invoke
+[2025-10-05T13:20:59Z]     return ctx.invoke(self.callback, **ctx.params)
+[2025-10-05T13:20:59Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:59Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 814, in invoke
+[2025-10-05T13:20:59Z]     return callback(*args, **kwargs)
+[2025-10-05T13:20:59Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:59Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 423, in main
+[2025-10-05T13:20:59Z]     run(
+[2025-10-05T13:20:59Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 593, in run
+[2025-10-05T13:20:59Z]     server.run()
+[2025-10-05T13:20:59Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 67, in run
+[2025-10-05T13:20:59Z]     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+[2025-10-05T13:20:59Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:59Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 195, in run
+[2025-10-05T13:20:59Z]     return runner.run(main)
+[2025-10-05T13:20:59Z]            ^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:59Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+[2025-10-05T13:20:59Z]     return self._loop.run_until_complete(task)
+[2025-10-05T13:20:59Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:20:59Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+[2025-10-05T13:20:59Z]     return future.result()
+[2025-10-05T13:20:59Z]            ^^^^^^^^^^^^^^^
+[2025-10-05T13:20:59Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 71, in serve
+[2025-10-05T13:20:59Z]     await self._serve(sockets)
+[2025-10-05T13:20:59Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 78, in _serve
+[2025-10-05T13:20:59Z]     config.load()
+[2025-10-05T13:20:59Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/config.py", line 438, in load
+[2025-10-05T13:20:59Z]     self.loaded_app = import_from_string(self.app)
+[2025-10-05T13:20:59Z]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:00Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 22, in import_from_string
+[2025-10-05T13:21:00Z]     raise exc from None
+[2025-10-05T13:21:00Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[2025-10-05T13:21:00Z]     module = importlib.import_module(module_str)
+[2025-10-05T13:21:00Z]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:00Z]   File "/data/data/com.termux/files/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+[2025-10-05T13:21:00Z]     return _bootstrap._gcd_import(name[level:], package, level)
+[2025-10-05T13:21:00Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:00Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:00Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:00Z]   File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+[2025-10-05T13:21:00Z]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+[2025-10-05T13:21:00Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:00Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:00Z]   File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+[2025-10-05T13:21:00Z] ModuleNotFoundError: No module named 'websvc'
+[2025-10-05T13:21:00Z] [BOOT] fold-logger active, awkpid=24046 @ 2025-10-05T13:21:00Z
+[2025-10-05T13:21:00Z] Traceback (most recent call last):
+[2025-10-05T13:21:00Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/bin/uvicorn", line 7, in <module>
+[2025-10-05T13:21:00Z]     sys.exit(main())
+[2025-10-05T13:21:00Z]              ^^^^^^
+[2025-10-05T13:21:00Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1462, in __call__
+[2025-10-05T13:21:00Z]     return self.main(*args, **kwargs)
+[2025-10-05T13:21:00Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:00Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1383, in main
+[2025-10-05T13:21:00Z]     rv = self.invoke(ctx)
+[2025-10-05T13:21:00Z]          ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:00Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1246, in invoke
+[2025-10-05T13:21:00Z]     return ctx.invoke(self.callback, **ctx.params)
+[2025-10-05T13:21:00Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:00Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 814, in invoke
+[2025-10-05T13:21:00Z]     return callback(*args, **kwargs)
+[2025-10-05T13:21:00Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:00Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 423, in main
+[2025-10-05T13:21:00Z]     run(
+[2025-10-05T13:21:00Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 593, in run
+[2025-10-05T13:21:00Z]     server.run()
+[2025-10-05T13:21:00Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 67, in run
+[2025-10-05T13:21:00Z]     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+[2025-10-05T13:21:00Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:00Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 195, in run
+[2025-10-05T13:21:00Z]     return runner.run(main)
+[2025-10-05T13:21:00Z]            ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:00Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+[2025-10-05T13:21:00Z]     return self._loop.run_until_complete(task)
+[2025-10-05T13:21:00Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:00Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+[2025-10-05T13:21:00Z]     return future.result()
+[2025-10-05T13:21:00Z]            ^^^^^^^^^^^^^^^
+[2025-10-05T13:21:00Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 71, in serve
+[2025-10-05T13:21:00Z]     await self._serve(sockets)
+[2025-10-05T13:21:00Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 78, in _serve
+[2025-10-05T13:21:00Z]     config.load()
+[2025-10-05T13:21:00Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/config.py", line 438, in load
+[2025-10-05T13:21:00Z]     self.loaded_app = import_from_string(self.app)
+[2025-10-05T13:21:00Z]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:00Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 22, in import_from_string
+[2025-10-05T13:21:00Z]     raise exc from None
+[2025-10-05T13:21:01Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[2025-10-05T13:21:01Z]     module = importlib.import_module(module_str)
+[2025-10-05T13:21:01Z]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:01Z]   File "/data/data/com.termux/files/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+[2025-10-05T13:21:01Z]     return _bootstrap._gcd_import(name[level:], package, level)
+[2025-10-05T13:21:01Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:01Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:01Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:01Z]   File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+[2025-10-05T13:21:01Z]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+[2025-10-05T13:21:01Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:01Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:01Z]   File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+[2025-10-05T13:21:01Z] ModuleNotFoundError: No module named 'websvc'
+[2025-10-05T13:21:01Z] [BOOT] fold-logger active, awkpid=24150 @ 2025-10-05T13:21:01Z
+[2025-10-05T13:21:01Z] Traceback (most recent call last):
+[2025-10-05T13:21:01Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/bin/uvicorn", line 7, in <module>
+[2025-10-05T13:21:01Z]     sys.exit(main())
+[2025-10-05T13:21:01Z]              ^^^^^^
+[2025-10-05T13:21:01Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1462, in __call__
+[2025-10-05T13:21:01Z]     return self.main(*args, **kwargs)
+[2025-10-05T13:21:01Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:01Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1383, in main
+[2025-10-05T13:21:01Z]     rv = self.invoke(ctx)
+[2025-10-05T13:21:01Z]          ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:01Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1246, in invoke
+[2025-10-05T13:21:01Z]     return ctx.invoke(self.callback, **ctx.params)
+[2025-10-05T13:21:01Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:01Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 814, in invoke
+[2025-10-05T13:21:01Z]     return callback(*args, **kwargs)
+[2025-10-05T13:21:01Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:01Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 423, in main
+[2025-10-05T13:21:01Z]     run(
+[2025-10-05T13:21:01Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 593, in run
+[2025-10-05T13:21:01Z]     server.run()
+[2025-10-05T13:21:01Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 67, in run
+[2025-10-05T13:21:01Z]     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+[2025-10-05T13:21:01Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:01Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 195, in run
+[2025-10-05T13:21:01Z]     return runner.run(main)
+[2025-10-05T13:21:01Z]            ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:01Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+[2025-10-05T13:21:01Z]     return self._loop.run_until_complete(task)
+[2025-10-05T13:21:01Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:01Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+[2025-10-05T13:21:01Z]     return future.result()
+[2025-10-05T13:21:01Z]            ^^^^^^^^^^^^^^^
+[2025-10-05T13:21:01Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 71, in serve
+[2025-10-05T13:21:01Z]     await self._serve(sockets)
+[2025-10-05T13:21:02Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 78, in _serve
+[2025-10-05T13:21:02Z]     config.load()
+[2025-10-05T13:21:02Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/config.py", line 438, in load
+[2025-10-05T13:21:02Z]     self.loaded_app = import_from_string(self.app)
+[2025-10-05T13:21:02Z]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:02Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 22, in import_from_string
+[2025-10-05T13:21:02Z]     raise exc from None
+[2025-10-05T13:21:02Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[2025-10-05T13:21:02Z]     module = importlib.import_module(module_str)
+[2025-10-05T13:21:02Z]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:02Z]   File "/data/data/com.termux/files/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+[2025-10-05T13:21:02Z]     return _bootstrap._gcd_import(name[level:], package, level)
+[2025-10-05T13:21:02Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:02Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:02Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:02Z]   File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+[2025-10-05T13:21:02Z]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+[2025-10-05T13:21:02Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:02Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:02Z]   File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+[2025-10-05T13:21:02Z] ModuleNotFoundError: No module named 'websvc'
+[2025-10-05T13:21:02Z] [BOOT] fold-logger active, awkpid=24234 @ 2025-10-05T13:21:02Z
+[2025-10-05T13:21:02Z] Traceback (most recent call last):
+[2025-10-05T13:21:02Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/bin/uvicorn", line 7, in <module>
+[2025-10-05T13:21:02Z]     sys.exit(main())
+[2025-10-05T13:21:02Z]              ^^^^^^
+[2025-10-05T13:21:02Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1462, in __call__
+[2025-10-05T13:21:02Z]     return self.main(*args, **kwargs)
+[2025-10-05T13:21:02Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:02Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1383, in main
+[2025-10-05T13:21:02Z]     rv = self.invoke(ctx)
+[2025-10-05T13:21:02Z]          ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:02Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1246, in invoke
+[2025-10-05T13:21:02Z]     return ctx.invoke(self.callback, **ctx.params)
+[2025-10-05T13:21:02Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:02Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 814, in invoke
+[2025-10-05T13:21:02Z]     return callback(*args, **kwargs)
+[2025-10-05T13:21:02Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:02Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 423, in main
+[2025-10-05T13:21:02Z]     run(
+[2025-10-05T13:21:02Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 593, in run
+[2025-10-05T13:21:02Z]     server.run()
+[2025-10-05T13:21:02Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 67, in run
+[2025-10-05T13:21:02Z]     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+[2025-10-05T13:21:02Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:02Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 195, in run
+[2025-10-05T13:21:02Z]     return runner.run(main)
+[2025-10-05T13:21:02Z]            ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:02Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+[2025-10-05T13:21:02Z]     return self._loop.run_until_complete(task)
+[2025-10-05T13:21:02Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:02Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+[2025-10-05T13:21:02Z]     return future.result()
+[2025-10-05T13:21:02Z]            ^^^^^^^^^^^^^^^
+[2025-10-05T13:21:02Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 71, in serve
+[2025-10-05T13:21:02Z]     await self._serve(sockets)
+[2025-10-05T13:21:02Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 78, in _serve
+[2025-10-05T13:21:02Z]     config.load()
+[2025-10-05T13:21:02Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/config.py", line 438, in load
+[2025-10-05T13:21:02Z]     self.loaded_app = import_from_string(self.app)
+[2025-10-05T13:21:02Z]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:02Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 22, in import_from_string
+[2025-10-05T13:21:02Z]     raise exc from None
+[2025-10-05T13:21:03Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[2025-10-05T13:21:03Z]     module = importlib.import_module(module_str)
+[2025-10-05T13:21:03Z]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:03Z]   File "/data/data/com.termux/files/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+[2025-10-05T13:21:03Z]     return _bootstrap._gcd_import(name[level:], package, level)
+[2025-10-05T13:21:03Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:03Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:03Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:03Z]   File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+[2025-10-05T13:21:03Z]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+[2025-10-05T13:21:03Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:03Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:03Z]   File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+[2025-10-05T13:21:03Z] ModuleNotFoundError: No module named 'websvc'
+[2025-10-05T13:21:03Z] [BOOT] fold-logger active, awkpid=24309 @ 2025-10-05T13:21:03Z
+[2025-10-05T13:21:03Z] Traceback (most recent call last):
+[2025-10-05T13:21:03Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/bin/uvicorn", line 7, in <module>
+[2025-10-05T13:21:03Z]     sys.exit(main())
+[2025-10-05T13:21:03Z]              ^^^^^^
+[2025-10-05T13:21:03Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1462, in __call__
+[2025-10-05T13:21:03Z]     return self.main(*args, **kwargs)
+[2025-10-05T13:21:03Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:03Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1383, in main
+[2025-10-05T13:21:03Z]     rv = self.invoke(ctx)
+[2025-10-05T13:21:03Z]          ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:03Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1246, in invoke
+[2025-10-05T13:21:03Z]     return ctx.invoke(self.callback, **ctx.params)
+[2025-10-05T13:21:03Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:03Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 814, in invoke
+[2025-10-05T13:21:03Z]     return callback(*args, **kwargs)
+[2025-10-05T13:21:03Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:03Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 423, in main
+[2025-10-05T13:21:03Z]     run(
+[2025-10-05T13:21:03Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 593, in run
+[2025-10-05T13:21:03Z]     server.run()
+[2025-10-05T13:21:03Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 67, in run
+[2025-10-05T13:21:03Z]     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+[2025-10-05T13:21:03Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:03Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 195, in run
+[2025-10-05T13:21:03Z]     return runner.run(main)
+[2025-10-05T13:21:03Z]            ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:03Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+[2025-10-05T13:21:03Z]     return self._loop.run_until_complete(task)
+[2025-10-05T13:21:03Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:03Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+[2025-10-05T13:21:03Z]     return future.result()
+[2025-10-05T13:21:03Z]            ^^^^^^^^^^^^^^^
+[2025-10-05T13:21:03Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 71, in serve
+[2025-10-05T13:21:03Z]     await self._serve(sockets)
+[2025-10-05T13:21:03Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 78, in _serve
+[2025-10-05T13:21:03Z]     config.load()
+[2025-10-05T13:21:04Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/config.py", line 438, in load
+[2025-10-05T13:21:04Z]     self.loaded_app = import_from_string(self.app)
+[2025-10-05T13:21:04Z]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:04Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 22, in import_from_string
+[2025-10-05T13:21:04Z]     raise exc from None
+[2025-10-05T13:21:04Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[2025-10-05T13:21:04Z]     module = importlib.import_module(module_str)
+[2025-10-05T13:21:04Z]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:04Z]   File "/data/data/com.termux/files/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+[2025-10-05T13:21:04Z]     return _bootstrap._gcd_import(name[level:], package, level)
+[2025-10-05T13:21:04Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:04Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:04Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:04Z]   File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+[2025-10-05T13:21:04Z]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+[2025-10-05T13:21:04Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:04Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:04Z]   File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+[2025-10-05T13:21:04Z] ModuleNotFoundError: No module named 'websvc'
+[2025-10-05T13:21:04Z] [BOOT] fold-logger active, awkpid=24377 @ 2025-10-05T13:21:04Z
+[2025-10-05T13:21:04Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/bin/uvicorn", line 7, in <module>
+[2025-10-05T13:21:04Z] Traceback (most recent call last):
+[2025-10-05T13:21:04Z]     sys.exit(main())
+[2025-10-05T13:21:04Z]              ^^^^^^
+[2025-10-05T13:21:04Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1462, in __call__
+[2025-10-05T13:21:04Z]     return self.main(*args, **kwargs)
+[2025-10-05T13:21:04Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:04Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1383, in main
+[2025-10-05T13:21:04Z]     rv = self.invoke(ctx)
+[2025-10-05T13:21:04Z]          ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:04Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1246, in invoke
+[2025-10-05T13:21:04Z]     return ctx.invoke(self.callback, **ctx.params)
+[2025-10-05T13:21:04Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:04Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 814, in invoke
+[2025-10-05T13:21:04Z]     return callback(*args, **kwargs)
+[2025-10-05T13:21:04Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:04Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 423, in main
+[2025-10-05T13:21:04Z]     run(
+[2025-10-05T13:21:04Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 593, in run
+[2025-10-05T13:21:04Z]     server.run()
+[2025-10-05T13:21:04Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 67, in run
+[2025-10-05T13:21:04Z]     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+[2025-10-05T13:21:04Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:04Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 195, in run
+[2025-10-05T13:21:04Z]     return runner.run(main)
+[2025-10-05T13:21:04Z]            ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:04Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+[2025-10-05T13:21:04Z]     return self._loop.run_until_complete(task)
+[2025-10-05T13:21:04Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:04Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+[2025-10-05T13:21:04Z]     return future.result()
+[2025-10-05T13:21:04Z]            ^^^^^^^^^^^^^^^
+[2025-10-05T13:21:04Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 71, in serve
+[2025-10-05T13:21:04Z]     await self._serve(sockets)
+[2025-10-05T13:21:04Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 78, in _serve
+[2025-10-05T13:21:04Z]     config.load()
+[2025-10-05T13:21:04Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/config.py", line 438, in load
+[2025-10-05T13:21:04Z]     self.loaded_app = import_from_string(self.app)
+[2025-10-05T13:21:04Z]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:05Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 22, in import_from_string
+[2025-10-05T13:21:05Z]     raise exc from None
+[2025-10-05T13:21:05Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[2025-10-05T13:21:05Z]     module = importlib.import_module(module_str)
+[2025-10-05T13:21:05Z]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:05Z]   File "/data/data/com.termux/files/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+[2025-10-05T13:21:05Z]     return _bootstrap._gcd_import(name[level:], package, level)
+[2025-10-05T13:21:05Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:05Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:05Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:05Z]   File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+[2025-10-05T13:21:05Z]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+[2025-10-05T13:21:05Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:05Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:05Z]   File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+[2025-10-05T13:21:05Z] ModuleNotFoundError: No module named 'websvc'
+[2025-10-05T13:21:05Z] [BOOT] fold-logger active, awkpid=24447 @ 2025-10-05T13:21:05Z
+[2025-10-05T13:21:05Z] Traceback (most recent call last):
+[2025-10-05T13:21:05Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/bin/uvicorn", line 7, in <module>
+[2025-10-05T13:21:05Z]     sys.exit(main())
+[2025-10-05T13:21:05Z]              ^^^^^^
+[2025-10-05T13:21:05Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1462, in __call__
+[2025-10-05T13:21:05Z]     return self.main(*args, **kwargs)
+[2025-10-05T13:21:05Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:05Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1383, in main
+[2025-10-05T13:21:05Z]     rv = self.invoke(ctx)
+[2025-10-05T13:21:05Z]          ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:05Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1246, in invoke
+[2025-10-05T13:21:05Z]     return ctx.invoke(self.callback, **ctx.params)
+[2025-10-05T13:21:05Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:05Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 814, in invoke
+[2025-10-05T13:21:05Z]     return callback(*args, **kwargs)
+[2025-10-05T13:21:05Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:05Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 423, in main
+[2025-10-05T13:21:05Z]     run(
+[2025-10-05T13:21:05Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 593, in run
+[2025-10-05T13:21:05Z]     server.run()
+[2025-10-05T13:21:05Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 67, in run
+[2025-10-05T13:21:05Z]     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+[2025-10-05T13:21:05Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:05Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 195, in run
+[2025-10-05T13:21:05Z]     return runner.run(main)
+[2025-10-05T13:21:05Z]            ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:05Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+[2025-10-05T13:21:05Z]     return self._loop.run_until_complete(task)
+[2025-10-05T13:21:05Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:05Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+[2025-10-05T13:21:05Z]     return future.result()
+[2025-10-05T13:21:05Z]            ^^^^^^^^^^^^^^^
+[2025-10-05T13:21:05Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 71, in serve
+[2025-10-05T13:21:05Z]     await self._serve(sockets)
+[2025-10-05T13:21:05Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 78, in _serve
+[2025-10-05T13:21:06Z]     config.load()
+[2025-10-05T13:21:06Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/config.py", line 438, in load
+[2025-10-05T13:21:06Z]     self.loaded_app = import_from_string(self.app)
+[2025-10-05T13:21:06Z]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:06Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 22, in import_from_string
+[2025-10-05T13:21:06Z]     raise exc from None
+[2025-10-05T13:21:06Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[2025-10-05T13:21:06Z]     module = importlib.import_module(module_str)
+[2025-10-05T13:21:06Z]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:06Z]   File "/data/data/com.termux/files/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+[2025-10-05T13:21:06Z]     return _bootstrap._gcd_import(name[level:], package, level)
+[2025-10-05T13:21:06Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:06Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:06Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:06Z]   File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+[2025-10-05T13:21:06Z]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+[2025-10-05T13:21:06Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:06Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:06Z]   File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+[2025-10-05T13:21:06Z] ModuleNotFoundError: No module named 'websvc'
+[2025-10-05T13:21:06Z] [BOOT] fold-logger active, awkpid=24525 @ 2025-10-05T13:21:06Z
+[2025-10-05T13:21:06Z] Traceback (most recent call last):
+[2025-10-05T13:21:06Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/bin/uvicorn", line 7, in <module>
+[2025-10-05T13:21:06Z]     sys.exit(main())
+[2025-10-05T13:21:06Z]              ^^^^^^
+[2025-10-05T13:21:06Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1462, in __call__
+[2025-10-05T13:21:06Z]     return self.main(*args, **kwargs)
+[2025-10-05T13:21:06Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:06Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1383, in main
+[2025-10-05T13:21:06Z]     rv = self.invoke(ctx)
+[2025-10-05T13:21:06Z]          ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:06Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1246, in invoke
+[2025-10-05T13:21:06Z]     return ctx.invoke(self.callback, **ctx.params)
+[2025-10-05T13:21:06Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:06Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 814, in invoke
+[2025-10-05T13:21:06Z]     return callback(*args, **kwargs)
+[2025-10-05T13:21:06Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:06Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 423, in main
+[2025-10-05T13:21:06Z]     run(
+[2025-10-05T13:21:06Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 593, in run
+[2025-10-05T13:21:06Z]     server.run()
+[2025-10-05T13:21:06Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 67, in run
+[2025-10-05T13:21:06Z]     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+[2025-10-05T13:21:06Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:06Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 195, in run
+[2025-10-05T13:21:06Z]     return runner.run(main)
+[2025-10-05T13:21:06Z]            ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:06Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+[2025-10-05T13:21:07Z]     return self._loop.run_until_complete(task)
+[2025-10-05T13:21:07Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:07Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+[2025-10-05T13:21:07Z]     return future.result()
+[2025-10-05T13:21:07Z]            ^^^^^^^^^^^^^^^
+[2025-10-05T13:21:07Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 71, in serve
+[2025-10-05T13:21:07Z]     await self._serve(sockets)
+[2025-10-05T13:21:07Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 78, in _serve
+[2025-10-05T13:21:07Z]     config.load()
+[2025-10-05T13:21:07Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/config.py", line 438, in load
+[2025-10-05T13:21:07Z]     self.loaded_app = import_from_string(self.app)
+[2025-10-05T13:21:07Z]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:07Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 22, in import_from_string
+[2025-10-05T13:21:07Z]     raise exc from None
+[2025-10-05T13:21:07Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[2025-10-05T13:21:07Z]     module = importlib.import_module(module_str)
+[2025-10-05T13:21:07Z]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:07Z]   File "/data/data/com.termux/files/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+[2025-10-05T13:21:07Z]     return _bootstrap._gcd_import(name[level:], package, level)
+[2025-10-05T13:21:07Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:07Z] [BOOT] fold-logger active, awkpid=24602 @ 2025-10-05T13:21:07Z
+[2025-10-05T13:21:07Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:07Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:07Z]   File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+[2025-10-05T13:21:07Z]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+[2025-10-05T13:21:07Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:07Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:07Z]   File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+[2025-10-05T13:21:07Z] ModuleNotFoundError: No module named 'websvc'
+[2025-10-05T13:21:07Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/bin/uvicorn", line 7, in <module>
+[2025-10-05T13:21:07Z] Traceback (most recent call last):
+[2025-10-05T13:21:07Z]     sys.exit(main())
+[2025-10-05T13:21:07Z]              ^^^^^^
+[2025-10-05T13:21:07Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1462, in __call__
+[2025-10-05T13:21:07Z]     return self.main(*args, **kwargs)
+[2025-10-05T13:21:07Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:07Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1383, in main
+[2025-10-05T13:21:07Z]     rv = self.invoke(ctx)
+[2025-10-05T13:21:07Z]          ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:07Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1246, in invoke
+[2025-10-05T13:21:07Z]     return ctx.invoke(self.callback, **ctx.params)
+[2025-10-05T13:21:07Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:07Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 814, in invoke
+[2025-10-05T13:21:07Z]     return callback(*args, **kwargs)
+[2025-10-05T13:21:07Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:07Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 423, in main
+[2025-10-05T13:21:07Z]     run(
+[2025-10-05T13:21:07Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 593, in run
+[2025-10-05T13:21:07Z]     server.run()
+[2025-10-05T13:21:07Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 67, in run
+[2025-10-05T13:21:07Z]     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+[2025-10-05T13:21:07Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:07Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 195, in run
+[2025-10-05T13:21:07Z]     return runner.run(main)
+[2025-10-05T13:21:07Z]            ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:07Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+[2025-10-05T13:21:07Z]     return self._loop.run_until_complete(task)
+[2025-10-05T13:21:07Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:07Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+[2025-10-05T13:21:07Z]     return future.result()
+[2025-10-05T13:21:07Z]            ^^^^^^^^^^^^^^^
+[2025-10-05T13:21:07Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 71, in serve
+[2025-10-05T13:21:07Z]     await self._serve(sockets)
+[2025-10-05T13:21:07Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 78, in _serve
+[2025-10-05T13:21:08Z]     config.load()
+[2025-10-05T13:21:08Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/config.py", line 438, in load
+[2025-10-05T13:21:08Z]     self.loaded_app = import_from_string(self.app)
+[2025-10-05T13:21:08Z]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:08Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 22, in import_from_string
+[2025-10-05T13:21:08Z]     raise exc from None
+[2025-10-05T13:21:08Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[2025-10-05T13:21:08Z]     module = importlib.import_module(module_str)
+[2025-10-05T13:21:08Z]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:08Z]   File "/data/data/com.termux/files/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+[2025-10-05T13:21:08Z]     return _bootstrap._gcd_import(name[level:], package, level)
+[2025-10-05T13:21:08Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:08Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:08Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:08Z]   File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+[2025-10-05T13:21:08Z]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+[2025-10-05T13:21:08Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:08Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:08Z]   File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+[2025-10-05T13:21:08Z] ModuleNotFoundError: No module named 'websvc'
+[2025-10-05T13:21:08Z] [BOOT] fold-logger active, awkpid=24678 @ 2025-10-05T13:21:08Z
+[2025-10-05T13:21:08Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/bin/uvicorn", line 7, in <module>
+[2025-10-05T13:21:08Z] Traceback (most recent call last):
+[2025-10-05T13:21:08Z]     sys.exit(main())
+[2025-10-05T13:21:08Z]              ^^^^^^
+[2025-10-05T13:21:08Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1462, in __call__
+[2025-10-05T13:21:08Z]     return self.main(*args, **kwargs)
+[2025-10-05T13:21:08Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:08Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1383, in main
+[2025-10-05T13:21:08Z]     rv = self.invoke(ctx)
+[2025-10-05T13:21:08Z]          ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:08Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1246, in invoke
+[2025-10-05T13:21:08Z]     return ctx.invoke(self.callback, **ctx.params)
+[2025-10-05T13:21:08Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:08Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 814, in invoke
+[2025-10-05T13:21:08Z]     return callback(*args, **kwargs)
+[2025-10-05T13:21:08Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:08Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 423, in main
+[2025-10-05T13:21:08Z]     run(
+[2025-10-05T13:21:08Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 593, in run
+[2025-10-05T13:21:08Z]     server.run()
+[2025-10-05T13:21:08Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 67, in run
+[2025-10-05T13:21:08Z]     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+[2025-10-05T13:21:08Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:08Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 195, in run
+[2025-10-05T13:21:08Z]     return runner.run(main)
+[2025-10-05T13:21:08Z]            ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:08Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+[2025-10-05T13:21:08Z]     return self._loop.run_until_complete(task)
+[2025-10-05T13:21:08Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:08Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+[2025-10-05T13:21:08Z]     return future.result()
+[2025-10-05T13:21:08Z]            ^^^^^^^^^^^^^^^
+[2025-10-05T13:21:08Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 71, in serve
+[2025-10-05T13:21:08Z]     await self._serve(sockets)
+[2025-10-05T13:21:08Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 78, in _serve
+[2025-10-05T13:21:08Z]     config.load()
+[2025-10-05T13:21:08Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/config.py", line 438, in load
+[2025-10-05T13:21:08Z]     self.loaded_app = import_from_string(self.app)
+[2025-10-05T13:21:09Z]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:09Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 22, in import_from_string
+[2025-10-05T13:21:09Z]     raise exc from None
+[2025-10-05T13:21:09Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[2025-10-05T13:21:09Z]     module = importlib.import_module(module_str)
+[2025-10-05T13:21:09Z]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:09Z]   File "/data/data/com.termux/files/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+[2025-10-05T13:21:09Z]     return _bootstrap._gcd_import(name[level:], package, level)
+[2025-10-05T13:21:09Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:09Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:09Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:09Z]   File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+[2025-10-05T13:21:09Z]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+[2025-10-05T13:21:09Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:09Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:09Z]   File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+[2025-10-05T13:21:09Z] ModuleNotFoundError: No module named 'websvc'
+[2025-10-05T13:21:09Z] [BOOT] fold-logger active, awkpid=24750 @ 2025-10-05T13:21:09Z
+[2025-10-05T13:21:09Z] Traceback (most recent call last):
+[2025-10-05T13:21:09Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/bin/uvicorn", line 7, in <module>
+[2025-10-05T13:21:09Z]     sys.exit(main())
+[2025-10-05T13:21:09Z]              ^^^^^^
+[2025-10-05T13:21:09Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1462, in __call__
+[2025-10-05T13:21:09Z]     return self.main(*args, **kwargs)
+[2025-10-05T13:21:09Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:09Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1383, in main
+[2025-10-05T13:21:09Z]     rv = self.invoke(ctx)
+[2025-10-05T13:21:09Z]          ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:09Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1246, in invoke
+[2025-10-05T13:21:09Z]     return ctx.invoke(self.callback, **ctx.params)
+[2025-10-05T13:21:09Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:09Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 814, in invoke
+[2025-10-05T13:21:09Z]     return callback(*args, **kwargs)
+[2025-10-05T13:21:09Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:09Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 423, in main
+[2025-10-05T13:21:09Z]     run(
+[2025-10-05T13:21:09Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 593, in run
+[2025-10-05T13:21:09Z]     server.run()
+[2025-10-05T13:21:09Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 67, in run
+[2025-10-05T13:21:09Z]     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+[2025-10-05T13:21:09Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:09Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 195, in run
+[2025-10-05T13:21:09Z]     return runner.run(main)
+[2025-10-05T13:21:09Z]            ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:09Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+[2025-10-05T13:21:09Z]     return self._loop.run_until_complete(task)
+[2025-10-05T13:21:09Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:09Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+[2025-10-05T13:21:09Z]     return future.result()
+[2025-10-05T13:21:09Z]            ^^^^^^^^^^^^^^^
+[2025-10-05T13:21:09Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 71, in serve
+[2025-10-05T13:21:09Z]     await self._serve(sockets)
+[2025-10-05T13:21:09Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 78, in _serve
+[2025-10-05T13:21:09Z]     config.load()
+[2025-10-05T13:21:09Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/config.py", line 438, in load
+[2025-10-05T13:21:10Z]     self.loaded_app = import_from_string(self.app)
+[2025-10-05T13:21:10Z]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:10Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 22, in import_from_string
+[2025-10-05T13:21:10Z]     raise exc from None
+[2025-10-05T13:21:10Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[2025-10-05T13:21:10Z]     module = importlib.import_module(module_str)
+[2025-10-05T13:21:10Z]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:10Z]   File "/data/data/com.termux/files/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+[2025-10-05T13:21:10Z]     return _bootstrap._gcd_import(name[level:], package, level)
+[2025-10-05T13:21:10Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:10Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:10Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:10Z]   File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+[2025-10-05T13:21:10Z]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+[2025-10-05T13:21:10Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:10Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:10Z]   File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+[2025-10-05T13:21:10Z] ModuleNotFoundError: No module named 'websvc'
+[2025-10-05T13:21:10Z] [BOOT] fold-logger active, awkpid=24819 @ 2025-10-05T13:21:10Z
+[2025-10-05T13:21:10Z] Traceback (most recent call last):
+[2025-10-05T13:21:10Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/bin/uvicorn", line 7, in <module>
+[2025-10-05T13:21:10Z]     sys.exit(main())
+[2025-10-05T13:21:10Z]              ^^^^^^
+[2025-10-05T13:21:10Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1462, in __call__
+[2025-10-05T13:21:10Z]     return self.main(*args, **kwargs)
+[2025-10-05T13:21:10Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:10Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1383, in main
+[2025-10-05T13:21:10Z]     rv = self.invoke(ctx)
+[2025-10-05T13:21:10Z]          ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:10Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1246, in invoke
+[2025-10-05T13:21:10Z]     return ctx.invoke(self.callback, **ctx.params)
+[2025-10-05T13:21:10Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:10Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 814, in invoke
+[2025-10-05T13:21:10Z]     return callback(*args, **kwargs)
+[2025-10-05T13:21:10Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:10Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 423, in main
+[2025-10-05T13:21:10Z]     run(
+[2025-10-05T13:21:10Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 593, in run
+[2025-10-05T13:21:10Z]     server.run()
+[2025-10-05T13:21:10Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 67, in run
+[2025-10-05T13:21:10Z]     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+[2025-10-05T13:21:10Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:10Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 195, in run
+[2025-10-05T13:21:10Z]     return runner.run(main)
+[2025-10-05T13:21:10Z]            ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:10Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+[2025-10-05T13:21:10Z]     return self._loop.run_until_complete(task)
+[2025-10-05T13:21:10Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:10Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+[2025-10-05T13:21:10Z]     return future.result()
+[2025-10-05T13:21:10Z]            ^^^^^^^^^^^^^^^
+[2025-10-05T13:21:10Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 71, in serve
+[2025-10-05T13:21:10Z]     await self._serve(sockets)
+[2025-10-05T13:21:10Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 78, in _serve
+[2025-10-05T13:21:10Z]     config.load()
+[2025-10-05T13:21:11Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/config.py", line 438, in load
+[2025-10-05T13:21:11Z]     self.loaded_app = import_from_string(self.app)
+[2025-10-05T13:21:11Z]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:11Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 22, in import_from_string
+[2025-10-05T13:21:11Z]     raise exc from None
+[2025-10-05T13:21:11Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[2025-10-05T13:21:11Z]     module = importlib.import_module(module_str)
+[2025-10-05T13:21:11Z]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:11Z]   File "/data/data/com.termux/files/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+[2025-10-05T13:21:11Z]     return _bootstrap._gcd_import(name[level:], package, level)
+[2025-10-05T13:21:11Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:11Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:11Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:11Z]   File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+[2025-10-05T13:21:11Z]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+[2025-10-05T13:21:11Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:11Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:11Z]   File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+[2025-10-05T13:21:11Z] ModuleNotFoundError: No module named 'websvc'
+[2025-10-05T13:21:11Z] [BOOT] fold-logger active, awkpid=24889 @ 2025-10-05T13:21:11Z
+[2025-10-05T13:21:11Z] Traceback (most recent call last):
+[2025-10-05T13:21:11Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/bin/uvicorn", line 7, in <module>
+[2025-10-05T13:21:11Z]     sys.exit(main())
+[2025-10-05T13:21:11Z]              ^^^^^^
+[2025-10-05T13:21:11Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1462, in __call__
+[2025-10-05T13:21:11Z]     return self.main(*args, **kwargs)
+[2025-10-05T13:21:11Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:11Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1383, in main
+[2025-10-05T13:21:11Z]     rv = self.invoke(ctx)
+[2025-10-05T13:21:11Z]          ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:11Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1246, in invoke
+[2025-10-05T13:21:11Z]     return ctx.invoke(self.callback, **ctx.params)
+[2025-10-05T13:21:11Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:11Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 814, in invoke
+[2025-10-05T13:21:11Z]     return callback(*args, **kwargs)
+[2025-10-05T13:21:11Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:11Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 423, in main
+[2025-10-05T13:21:11Z]     run(
+[2025-10-05T13:21:11Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 593, in run
+[2025-10-05T13:21:11Z]     server.run()
+[2025-10-05T13:21:11Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 67, in run
+[2025-10-05T13:21:11Z]     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+[2025-10-05T13:21:11Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:11Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 195, in run
+[2025-10-05T13:21:11Z]     return runner.run(main)
+[2025-10-05T13:21:11Z]            ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:11Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+[2025-10-05T13:21:11Z]     return self._loop.run_until_complete(task)
+[2025-10-05T13:21:11Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:12Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+[2025-10-05T13:21:12Z]     return future.result()
+[2025-10-05T13:21:12Z]            ^^^^^^^^^^^^^^^
+[2025-10-05T13:21:12Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 71, in serve
+[2025-10-05T13:21:12Z]     await self._serve(sockets)
+[2025-10-05T13:21:12Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 78, in _serve
+[2025-10-05T13:21:12Z]     config.load()
+[2025-10-05T13:21:12Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/config.py", line 438, in load
+[2025-10-05T13:21:12Z]     self.loaded_app = import_from_string(self.app)
+[2025-10-05T13:21:12Z]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:12Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 22, in import_from_string
+[2025-10-05T13:21:12Z]     raise exc from None
+[2025-10-05T13:21:12Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[2025-10-05T13:21:12Z]     module = importlib.import_module(module_str)
+[2025-10-05T13:21:12Z]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:12Z]   File "/data/data/com.termux/files/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+[2025-10-05T13:21:12Z]     return _bootstrap._gcd_import(name[level:], package, level)
+[2025-10-05T13:21:12Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:12Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:12Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:12Z]   File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+[2025-10-05T13:21:12Z]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+[2025-10-05T13:21:12Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:12Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:12Z] [BOOT] fold-logger active, awkpid=24972 @ 2025-10-05T13:21:12Z
+[2025-10-05T13:21:12Z]   File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+[2025-10-05T13:21:12Z] ModuleNotFoundError: No module named 'websvc'
+[2025-10-05T13:21:12Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/bin/uvicorn", line 7, in <module>
+[2025-10-05T13:21:12Z] Traceback (most recent call last):
+[2025-10-05T13:21:12Z]     sys.exit(main())
+[2025-10-05T13:21:12Z]              ^^^^^^
+[2025-10-05T13:21:12Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1462, in __call__
+[2025-10-05T13:21:12Z]     return self.main(*args, **kwargs)
+[2025-10-05T13:21:12Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:12Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1383, in main
+[2025-10-05T13:21:12Z]     rv = self.invoke(ctx)
+[2025-10-05T13:21:12Z]          ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:12Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1246, in invoke
+[2025-10-05T13:21:12Z]     return ctx.invoke(self.callback, **ctx.params)
+[2025-10-05T13:21:12Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:12Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 814, in invoke
+[2025-10-05T13:21:12Z]     return callback(*args, **kwargs)
+[2025-10-05T13:21:12Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:12Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 423, in main
+[2025-10-05T13:21:12Z]     run(
+[2025-10-05T13:21:12Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 593, in run
+[2025-10-05T13:21:12Z]     server.run()
+[2025-10-05T13:21:12Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 67, in run
+[2025-10-05T13:21:12Z]     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+[2025-10-05T13:21:12Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:12Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 195, in run
+[2025-10-05T13:21:12Z]     return runner.run(main)
+[2025-10-05T13:21:12Z]            ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:12Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+[2025-10-05T13:21:12Z]     return self._loop.run_until_complete(task)
+[2025-10-05T13:21:12Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:12Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+[2025-10-05T13:21:12Z]     return future.result()
+[2025-10-05T13:21:12Z]            ^^^^^^^^^^^^^^^
+[2025-10-05T13:21:12Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 71, in serve
+[2025-10-05T13:21:12Z]     await self._serve(sockets)
+[2025-10-05T13:21:12Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 78, in _serve
+[2025-10-05T13:21:12Z]     config.load()
+[2025-10-05T13:21:13Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/config.py", line 438, in load
+[2025-10-05T13:21:13Z]     self.loaded_app = import_from_string(self.app)
+[2025-10-05T13:21:13Z]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:13Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 22, in import_from_string
+[2025-10-05T13:21:13Z]     raise exc from None
+[2025-10-05T13:21:13Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[2025-10-05T13:21:13Z]     module = importlib.import_module(module_str)
+[2025-10-05T13:21:13Z]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:13Z]   File "/data/data/com.termux/files/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+[2025-10-05T13:21:13Z]     return _bootstrap._gcd_import(name[level:], package, level)
+[2025-10-05T13:21:13Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:13Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:13Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:13Z]   File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+[2025-10-05T13:21:13Z]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+[2025-10-05T13:21:13Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:13Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:13Z]   File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+[2025-10-05T13:21:13Z] ModuleNotFoundError: No module named 'websvc'
+[2025-10-05T13:21:13Z] [BOOT] fold-logger active, awkpid=25050 @ 2025-10-05T13:21:13Z
+[2025-10-05T13:21:13Z] Traceback (most recent call last):
+[2025-10-05T13:21:13Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/bin/uvicorn", line 7, in <module>
+[2025-10-05T13:21:13Z]     sys.exit(main())
+[2025-10-05T13:21:13Z]              ^^^^^^
+[2025-10-05T13:21:13Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1462, in __call__
+[2025-10-05T13:21:13Z]     return self.main(*args, **kwargs)
+[2025-10-05T13:21:13Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:13Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1383, in main
+[2025-10-05T13:21:13Z]     rv = self.invoke(ctx)
+[2025-10-05T13:21:13Z]          ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:13Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 1246, in invoke
+[2025-10-05T13:21:13Z]     return ctx.invoke(self.callback, **ctx.params)
+[2025-10-05T13:21:13Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:13Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/click/core.py", line 814, in invoke
+[2025-10-05T13:21:13Z]     return callback(*args, **kwargs)
+[2025-10-05T13:21:13Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:13Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 423, in main
+[2025-10-05T13:21:13Z]     run(
+[2025-10-05T13:21:13Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/main.py", line 593, in run
+[2025-10-05T13:21:13Z]     server.run()
+[2025-10-05T13:21:13Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 67, in run
+[2025-10-05T13:21:13Z]     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+[2025-10-05T13:21:13Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:13Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 195, in run
+[2025-10-05T13:21:13Z]     return runner.run(main)
+[2025-10-05T13:21:13Z]            ^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:13Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+[2025-10-05T13:21:13Z]     return self._loop.run_until_complete(task)
+[2025-10-05T13:21:13Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:13Z]   File "/data/data/com.termux/files/usr/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+[2025-10-05T13:21:13Z]     return future.result()
+[2025-10-05T13:21:13Z]            ^^^^^^^^^^^^^^^
+[2025-10-05T13:21:13Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 71, in serve
+[2025-10-05T13:21:13Z]     await self._serve(sockets)
+[2025-10-05T13:21:13Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/server.py", line 78, in _serve
+[2025-10-05T13:21:13Z]     config.load()
+[2025-10-05T13:21:14Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/config.py", line 438, in load
+[2025-10-05T13:21:14Z]     self.loaded_app = import_from_string(self.app)
+[2025-10-05T13:21:14Z]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:14Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 22, in import_from_string
+[2025-10-05T13:21:14Z]     raise exc from None
+[2025-10-05T13:21:14Z]   File "/data/data/com.termux/files/home/neon/nx/projects/zetafoundry/.venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+[2025-10-05T13:21:14Z]     module = importlib.import_module(module_str)
+[2025-10-05T13:21:14Z]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:14Z]   File "/data/data/com.termux/files/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+[2025-10-05T13:21:14Z]     return _bootstrap._gcd_import(name[level:], package, level)
+[2025-10-05T13:21:14Z]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-05T13:21:14Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+[2025-10-05T13:21:14Z]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+[2025-10-05T13:21:14Z]   File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+[2025-10-05T13:21:14Z]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+[2025-10-05T13:21:14Z]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import

@@ -1,0 +1,25 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -euo pipefail
+HOST="127.0.0.1"; PORT="${ZFX_PORT:-8785}"
+cmd="${1:-tail}"; shift || true
+
+case "$cmd" in
+  verify)
+    curl -fsS "http://$HOST:$PORT/audit/verify" | jq
+    ;;
+  tail)
+    N="${1:-20}"
+    curl -fsS "http://$HOST:$PORT/audit?limit=$N" | jq '.entries'
+    ;;
+  raw)
+    N="${1:-20}"
+    curl -fsS "http://$HOST:$PORT/audit?limit=$N" | jq -c '.entries[]'
+    ;;
+  last)
+    curl -fsS "http://$HOST:$PORT/audit?limit=1" | jq '.entries[0]'
+    ;;
+  *)
+    echo "usage: zfx-audit [verify|tail N|raw N|last]" >&2
+    exit 2
+    ;;
+esac

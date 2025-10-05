@@ -1,0 +1,7 @@
+STAMP  : 20251005T133100Z
+LABEL  : p3d-runfix
+TIME   : 2025-10-05 13:31:00 UTC
+API    : http://127.0.0.1:8785
+
+SUMMARY: P3d PYTHONPATH-in-run fix, Service green
+NOTE   : Fix: import websvc.api; Reason: missing PYTHONPATH in runit run; Impact: stabiler Start

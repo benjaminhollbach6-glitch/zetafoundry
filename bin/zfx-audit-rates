@@ -1,0 +1,12 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -Eeuo pipefail
+H="${ZFX_HOST:-127.0.0.1}"; P="${ZFX_PORT:-8785}"
+W="${1:-5,60,300}"
+PATHF="${2:-}"
+DEC="${3:-3}"
+
+URL="http://$H:$P/audit/rates?w=$W"
+[ -n "$PATHF" ] && URL="$URL&path=$PATHF"
+[ -n "$DEC" ] && URL="$URL&dec=$DEC"
+
+curl -fsS "$URL" | jq
