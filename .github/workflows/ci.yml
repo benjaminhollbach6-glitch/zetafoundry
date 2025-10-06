@@ -1,9 +1,5 @@
 name: ci
-
-on:
-  push:
-  pull_request:
-  workflow_dispatch:
+on: [push, pull_request, workflow_dispatch]
 
 jobs:
   test:
@@ -14,10 +10,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: 'pip'
+          cache-dependency-path: requirements.txt
 
       - name: Install deps
         run: |
-          python -m pip -V
           python -m pip install -U pip
           pip install -r requirements.txt
 
@@ -26,11 +23,12 @@ jobs:
           python -V
           pip -V
           python - <<'PY'
-          import sys
-          import fastapi, starlette
+          from importlib.metadata import version
+          import fastapi, starlette, prometheus_client as pc
           print("fastapi", fastapi.__version__)
           print("starlette", starlette.__version__)
-          print("sys.path[0]", sys.path[0])
+          print("prometheus-client", version("prometheus-client"))
+          print("prometheus_client.__file__", pc.__file__)
           PY
 
       - name: Run tests
